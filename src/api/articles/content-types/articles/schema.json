@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article",
+  "info": {
+    "singularName": "articles",
+    "pluralName": "article",
+    "displayName": "articles"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tags.tags",
+      "inversedBy": "articles"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comments.comments",
+      "mappedBy": "article"
+    }
+  }
+}

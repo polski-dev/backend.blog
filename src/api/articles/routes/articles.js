@@ -6,11 +6,4 @@
 
 const { createCoreRouter } = require("@strapi/strapi").factories;
 
-module.exports = createCoreRouter("api::articles.articles", {
-  method: "GET",
-  path: "/:id/comment",
-  handler: "articles.comments",
-  config: {
-    policies: [],
-  },
-});
+module.exports = createCoreRouter("api::articles.articles");

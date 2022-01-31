@@ -4,7 +4,8 @@
   "info": {
     "singularName": "articles",
     "pluralName": "article",
-    "displayName": "articles"
+    "displayName": "articles",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,9 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "tags": {
       "type": "relation",

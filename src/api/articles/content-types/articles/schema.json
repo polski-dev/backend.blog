@@ -28,6 +28,36 @@
       "relation": "oneToMany",
       "target": "api::comments.comments",
       "mappedBy": "article"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "articles"
+    },
+    "waitingroom": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "views": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "cover": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ratings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rating.rating",
+      "mappedBy": "article"
     }
   }
 }

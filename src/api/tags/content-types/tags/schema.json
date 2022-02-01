@@ -30,17 +30,22 @@
         "images"
       ]
     },
-    "followers": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "followtags"
-    },
     "articles": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::articles.articles",
       "mappedBy": "tags"
+    },
+    "views": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "followtags"
     }
   }
 }

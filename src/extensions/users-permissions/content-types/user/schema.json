@@ -67,12 +67,30 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::tags.tags",
-      "inversedBy": "followers"
+      "mappedBy": "users"
     },
     "comments": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::comments.comments",
+      "mappedBy": "author"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::articles.articles",
+      "mappedBy": "author"
+    },
+    "ratings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rating.rating",
+      "mappedBy": "author"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::video.video",
       "mappedBy": "author"
     }
   }

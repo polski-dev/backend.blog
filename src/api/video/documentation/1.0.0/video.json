@@ -2086,6 +2086,9 @@
                                                                           }
                                                                         }
                                                                       },
+                                                                      "youtube": {
+                                                                        "type": "string"
+                                                                      },
                                                                       "createdAt": {
                                                                         "type": "string",
                                                                         "format": "date-time"
@@ -2672,6 +2675,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "youtube": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -5068,6 +5074,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "youtube": {
+                                                                      "type": "string"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -5655,6 +5664,9 @@
                                 }
                               }
                             },
+                            "youtube": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -5894,6 +5906,9 @@
                           ],
                           "example": "string or id"
                         }
+                      },
+                      "youtube": {
+                        "type": "string"
                       }
                     }
                   }
@@ -7988,6 +8003,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "youtube": {
+                                                                      "type": "string"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -8574,6 +8592,9 @@
                                   }
                                 }
                               }
+                            },
+                            "youtube": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -10879,6 +10900,9 @@
                                                                         }
                                                                       }
                                                                     },
+                                                                    "youtube": {
+                                                                      "type": "string"
+                                                                    },
                                                                     "createdAt": {
                                                                       "type": "string",
                                                                       "format": "date-time"
@@ -11466,6 +11490,9 @@
                                 }
                               }
                             },
+                            "youtube": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -11755,6 +11782,9 @@
                           ],
                           "example": "string or id"
                         }
+                      },
+                      "youtube": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",

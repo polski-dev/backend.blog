@@ -50,6 +50,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::rating.rating"
+    },
+    "youtube": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

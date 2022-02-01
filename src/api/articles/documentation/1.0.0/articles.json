@@ -5926,6 +5926,20 @@
                       },
                       "views": {
                         "type": "integer"
+                      },
+                      "cover": {
+                        "type": "array",
+                        "items": {
+                          "oneOf": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ],
+                          "example": "string or id"
+                        }
                       }
                     }
                   }

@@ -30,7 +30,7 @@
     },
     "waitingroom": {
       "type": "boolean",
-      "default": true,
+      "default": false,
       "required": true
     },
     "views": {

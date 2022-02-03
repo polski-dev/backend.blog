@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "ratings",
+  "collectionName": "grades",
   "info": {
-    "singularName": "rating",
-    "pluralName": "ratings",
-    "displayName": "ratings",
+    "singularName": "grade",
+    "pluralName": "grades",
+    "displayName": "grade",
     "description": ""
   },
   "options": {
@@ -12,25 +12,27 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "rating": {
+    "voice": {
       "type": "enumeration",
       "enum": [
         "best",
         "wow",
         "wrr"
-      ]
+      ],
+      "required": true,
+      "default": "best"
     },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "ratings"
+      "inversedBy": "grades"
     },
     "article": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::articles.articles",
-      "inversedBy": "ratings"
+      "inversedBy": "grades"
     }
   }
 }

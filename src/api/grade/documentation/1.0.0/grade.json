@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/ratings": {
+    "/grades": {
       "get": {
         "responses": {
           "200": {
@@ -19,7 +19,7 @@
                           "attributes": {
                             "type": "object",
                             "properties": {
-                              "rating": {
+                              "voice": {
                                 "type": "string",
                                 "enum": [
                                   "best",
@@ -1408,7 +1408,7 @@
                                                                           }
                                                                         }
                                                                       },
-                                                                      "ratings": {
+                                                                      "grades": {
                                                                         "type": "object",
                                                                         "properties": {
                                                                           "data": {
@@ -1422,7 +1422,7 @@
                                                                                 "attributes": {
                                                                                   "type": "object",
                                                                                   "properties": {
-                                                                                    "rating": {
+                                                                                    "voice": {
                                                                                       "type": "string",
                                                                                       "enum": [
                                                                                         "best",
@@ -1663,26 +1663,6 @@
                                             }
                                           },
                                           "articles": {
-                                            "type": "object",
-                                            "properties": {
-                                              "data": {
-                                                "type": "array",
-                                                "items": {
-                                                  "type": "object",
-                                                  "properties": {
-                                                    "id": {
-                                                      "type": "string"
-                                                    },
-                                                    "attributes": {
-                                                      "type": "object",
-                                                      "properties": {}
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "ratings": {
                                             "type": "object",
                                             "properties": {
                                               "data": {
@@ -2132,26 +2112,6 @@
                                                             }
                                                           }
                                                         },
-                                                        "ratings": {
-                                                          "type": "object",
-                                                          "properties": {
-                                                            "data": {
-                                                              "type": "array",
-                                                              "items": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                  "id": {
-                                                                    "type": "string"
-                                                                  },
-                                                                  "attributes": {
-                                                                    "type": "object",
-                                                                    "properties": {}
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        },
                                                         "youtube": {
                                                           "type": "string"
                                                         },
@@ -2202,6 +2162,26 @@
                                                           }
                                                         }
                                                       }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "grades": {
+                                            "type": "object",
+                                            "properties": {
+                                              "data": {
+                                                "type": "array",
+                                                "items": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "id": {
+                                                      "type": "string"
+                                                    },
+                                                    "attributes": {
+                                                      "type": "object",
+                                                      "properties": {}
                                                     }
                                                   }
                                                 }
@@ -2495,7 +2475,7 @@
           }
         },
         "tags": [
-          "Rating"
+          "Grade"
         ],
         "parameters": [
           {
@@ -2597,7 +2577,7 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "rating": {
+                            "voice": {
                               "type": "string",
                               "enum": [
                                 "best",
@@ -3986,7 +3966,7 @@
                                                                         }
                                                                       }
                                                                     },
-                                                                    "ratings": {
+                                                                    "grades": {
                                                                       "type": "object",
                                                                       "properties": {
                                                                         "data": {
@@ -4000,7 +3980,7 @@
                                                                               "attributes": {
                                                                                 "type": "object",
                                                                                 "properties": {
-                                                                                  "rating": {
+                                                                                  "voice": {
                                                                                     "type": "string",
                                                                                     "enum": [
                                                                                       "best",
@@ -4241,26 +4221,6 @@
                                           }
                                         },
                                         "articles": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "array",
-                                              "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                  "id": {
-                                                    "type": "string"
-                                                  },
-                                                  "attributes": {
-                                                    "type": "object",
-                                                    "properties": {}
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "ratings": {
                                           "type": "object",
                                           "properties": {
                                             "data": {
@@ -4710,26 +4670,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "ratings": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                          "data": {
-                                                            "type": "array",
-                                                            "items": {
-                                                              "type": "object",
-                                                              "properties": {
-                                                                "id": {
-                                                                  "type": "string"
-                                                                },
-                                                                "attributes": {
-                                                                  "type": "object",
-                                                                  "properties": {}
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      },
                                                       "youtube": {
                                                         "type": "string"
                                                       },
@@ -4780,6 +4720,26 @@
                                                         }
                                                       }
                                                     }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "grades": {
+                                          "type": "object",
+                                          "properties": {
+                                            "data": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
                                                   }
                                                 }
                                               }
@@ -5052,7 +5012,7 @@
           }
         },
         "tags": [
-          "Rating"
+          "Grade"
         ],
         "parameters": [],
         "requestBody": {
@@ -5064,65 +5024,13 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "rating": {
+                      "voice": {
                         "type": "string",
                         "enum": [
                           "best",
                           "wow",
                           "wrr"
                         ]
-                      },
-                      "author": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "article": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "updatedAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "createdBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "updatedBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
                       }
                     }
                   }
@@ -5133,7 +5041,7 @@
         }
       }
     },
-    "/ratings/{id}": {
+    "/grades/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -5150,7 +5058,7 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "rating": {
+                            "voice": {
                               "type": "string",
                               "enum": [
                                 "best",
@@ -6539,7 +6447,7 @@
                                                                         }
                                                                       }
                                                                     },
-                                                                    "ratings": {
+                                                                    "grades": {
                                                                       "type": "object",
                                                                       "properties": {
                                                                         "data": {
@@ -6553,7 +6461,7 @@
                                                                               "attributes": {
                                                                                 "type": "object",
                                                                                 "properties": {
-                                                                                  "rating": {
+                                                                                  "voice": {
                                                                                     "type": "string",
                                                                                     "enum": [
                                                                                       "best",
@@ -6794,26 +6702,6 @@
                                           }
                                         },
                                         "articles": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "array",
-                                              "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                  "id": {
-                                                    "type": "string"
-                                                  },
-                                                  "attributes": {
-                                                    "type": "object",
-                                                    "properties": {}
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "ratings": {
                                           "type": "object",
                                           "properties": {
                                             "data": {
@@ -7263,26 +7151,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "ratings": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                          "data": {
-                                                            "type": "array",
-                                                            "items": {
-                                                              "type": "object",
-                                                              "properties": {
-                                                                "id": {
-                                                                  "type": "string"
-                                                                },
-                                                                "attributes": {
-                                                                  "type": "object",
-                                                                  "properties": {}
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      },
                                                       "youtube": {
                                                         "type": "string"
                                                       },
@@ -7333,6 +7201,26 @@
                                                         }
                                                       }
                                                     }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "grades": {
+                                          "type": "object",
+                                          "properties": {
+                                            "data": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
                                                   }
                                                 }
                                               }
@@ -7605,7 +7493,7 @@
           }
         },
         "tags": [
-          "Rating"
+          "Grade"
         ],
         "parameters": [
           {
@@ -7637,7 +7525,7 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "rating": {
+                            "voice": {
                               "type": "string",
                               "enum": [
                                 "best",
@@ -9026,7 +8914,7 @@
                                                                         }
                                                                       }
                                                                     },
-                                                                    "ratings": {
+                                                                    "grades": {
                                                                       "type": "object",
                                                                       "properties": {
                                                                         "data": {
@@ -9040,7 +8928,7 @@
                                                                               "attributes": {
                                                                                 "type": "object",
                                                                                 "properties": {
-                                                                                  "rating": {
+                                                                                  "voice": {
                                                                                     "type": "string",
                                                                                     "enum": [
                                                                                       "best",
@@ -9281,26 +9169,6 @@
                                           }
                                         },
                                         "articles": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "array",
-                                              "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                  "id": {
-                                                    "type": "string"
-                                                  },
-                                                  "attributes": {
-                                                    "type": "object",
-                                                    "properties": {}
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "ratings": {
                                           "type": "object",
                                           "properties": {
                                             "data": {
@@ -9750,26 +9618,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "ratings": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                          "data": {
-                                                            "type": "array",
-                                                            "items": {
-                                                              "type": "object",
-                                                              "properties": {
-                                                                "id": {
-                                                                  "type": "string"
-                                                                },
-                                                                "attributes": {
-                                                                  "type": "object",
-                                                                  "properties": {}
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      },
                                                       "youtube": {
                                                         "type": "string"
                                                       },
@@ -9820,6 +9668,26 @@
                                                         }
                                                       }
                                                     }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "grades": {
+                                          "type": "object",
+                                          "properties": {
+                                            "data": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
                                                   }
                                                 }
                                               }
@@ -10092,7 +9960,7 @@
           }
         },
         "tags": [
-          "Rating"
+          "Grade"
         ],
         "parameters": [
           {
@@ -10115,7 +9983,7 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "rating": {
+                      "voice": {
                         "type": "string",
                         "enum": [
                           "best",
@@ -10342,7 +10210,7 @@
           }
         },
         "tags": [
-          "Rating"
+          "Grade"
         ],
         "parameters": [
           {

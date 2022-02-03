@@ -1403,7 +1403,7 @@
                                                                           }
                                                                         }
                                                                       },
-                                                                      "ratings": {
+                                                                      "grades": {
                                                                         "type": "object",
                                                                         "properties": {
                                                                           "data": {
@@ -1417,7 +1417,7 @@
                                                                                 "attributes": {
                                                                                   "type": "object",
                                                                                   "properties": {
-                                                                                    "rating": {
+                                                                                    "voice": {
                                                                                       "type": "string",
                                                                                       "enum": [
                                                                                         "best",
@@ -1658,26 +1658,6 @@
                                             }
                                           },
                                           "articles": {
-                                            "type": "object",
-                                            "properties": {
-                                              "data": {
-                                                "type": "array",
-                                                "items": {
-                                                  "type": "object",
-                                                  "properties": {
-                                                    "id": {
-                                                      "type": "string"
-                                                    },
-                                                    "attributes": {
-                                                      "type": "object",
-                                                      "properties": {}
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          },
-                                          "ratings": {
                                             "type": "object",
                                             "properties": {
                                               "data": {
@@ -2127,26 +2107,6 @@
                                                             }
                                                           }
                                                         },
-                                                        "ratings": {
-                                                          "type": "object",
-                                                          "properties": {
-                                                            "data": {
-                                                              "type": "array",
-                                                              "items": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                  "id": {
-                                                                    "type": "string"
-                                                                  },
-                                                                  "attributes": {
-                                                                    "type": "object",
-                                                                    "properties": {}
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        },
                                                         "youtube": {
                                                           "type": "string"
                                                         },
@@ -2197,6 +2157,26 @@
                                                           }
                                                         }
                                                       }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "grades": {
+                                            "type": "object",
+                                            "properties": {
+                                              "data": {
+                                                "type": "array",
+                                                "items": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "id": {
+                                                      "type": "string"
+                                                    },
+                                                    "attributes": {
+                                                      "type": "object",
+                                                      "properties": {}
                                                     }
                                                   }
                                                 }
@@ -3980,7 +3960,7 @@
                                                                         }
                                                                       }
                                                                     },
-                                                                    "ratings": {
+                                                                    "grades": {
                                                                       "type": "object",
                                                                       "properties": {
                                                                         "data": {
@@ -3994,7 +3974,7 @@
                                                                               "attributes": {
                                                                                 "type": "object",
                                                                                 "properties": {
-                                                                                  "rating": {
+                                                                                  "voice": {
                                                                                     "type": "string",
                                                                                     "enum": [
                                                                                       "best",
@@ -4235,26 +4215,6 @@
                                           }
                                         },
                                         "articles": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "array",
-                                              "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                  "id": {
-                                                    "type": "string"
-                                                  },
-                                                  "attributes": {
-                                                    "type": "object",
-                                                    "properties": {}
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "ratings": {
                                           "type": "object",
                                           "properties": {
                                             "data": {
@@ -4704,26 +4664,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "ratings": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                          "data": {
-                                                            "type": "array",
-                                                            "items": {
-                                                              "type": "object",
-                                                              "properties": {
-                                                                "id": {
-                                                                  "type": "string"
-                                                                },
-                                                                "attributes": {
-                                                                  "type": "object",
-                                                                  "properties": {}
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      },
                                                       "youtube": {
                                                         "type": "string"
                                                       },
@@ -4774,6 +4714,26 @@
                                                         }
                                                       }
                                                     }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "grades": {
+                                          "type": "object",
+                                          "properties": {
+                                            "data": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
                                                   }
                                                 }
                                               }
@@ -6475,7 +6435,7 @@
                                                                         }
                                                                       }
                                                                     },
-                                                                    "ratings": {
+                                                                    "grades": {
                                                                       "type": "object",
                                                                       "properties": {
                                                                         "data": {
@@ -6489,7 +6449,7 @@
                                                                               "attributes": {
                                                                                 "type": "object",
                                                                                 "properties": {
-                                                                                  "rating": {
+                                                                                  "voice": {
                                                                                     "type": "string",
                                                                                     "enum": [
                                                                                       "best",
@@ -6730,26 +6690,6 @@
                                           }
                                         },
                                         "articles": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "array",
-                                              "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                  "id": {
-                                                    "type": "string"
-                                                  },
-                                                  "attributes": {
-                                                    "type": "object",
-                                                    "properties": {}
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "ratings": {
                                           "type": "object",
                                           "properties": {
                                             "data": {
@@ -7199,26 +7139,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "ratings": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                          "data": {
-                                                            "type": "array",
-                                                            "items": {
-                                                              "type": "object",
-                                                              "properties": {
-                                                                "id": {
-                                                                  "type": "string"
-                                                                },
-                                                                "attributes": {
-                                                                  "type": "object",
-                                                                  "properties": {}
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      },
                                                       "youtube": {
                                                         "type": "string"
                                                       },
@@ -7269,6 +7189,26 @@
                                                         }
                                                       }
                                                     }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "grades": {
+                                          "type": "object",
+                                          "properties": {
+                                            "data": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
                                                   }
                                                 }
                                               }
@@ -8961,7 +8901,7 @@
                                                                         }
                                                                       }
                                                                     },
-                                                                    "ratings": {
+                                                                    "grades": {
                                                                       "type": "object",
                                                                       "properties": {
                                                                         "data": {
@@ -8975,7 +8915,7 @@
                                                                               "attributes": {
                                                                                 "type": "object",
                                                                                 "properties": {
-                                                                                  "rating": {
+                                                                                  "voice": {
                                                                                     "type": "string",
                                                                                     "enum": [
                                                                                       "best",
@@ -9216,26 +9156,6 @@
                                           }
                                         },
                                         "articles": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "array",
-                                              "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                  "id": {
-                                                    "type": "string"
-                                                  },
-                                                  "attributes": {
-                                                    "type": "object",
-                                                    "properties": {}
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "ratings": {
                                           "type": "object",
                                           "properties": {
                                             "data": {
@@ -9685,26 +9605,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "ratings": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                          "data": {
-                                                            "type": "array",
-                                                            "items": {
-                                                              "type": "object",
-                                                              "properties": {
-                                                                "id": {
-                                                                  "type": "string"
-                                                                },
-                                                                "attributes": {
-                                                                  "type": "object",
-                                                                  "properties": {}
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      },
                                                       "youtube": {
                                                         "type": "string"
                                                       },
@@ -9755,6 +9655,26 @@
                                                         }
                                                       }
                                                     }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "grades": {
+                                          "type": "object",
+                                          "properties": {
+                                            "data": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
                                                   }
                                                 }
                                               }

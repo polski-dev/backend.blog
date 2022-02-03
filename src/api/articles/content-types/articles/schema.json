@@ -53,10 +53,10 @@
         "images"
       ]
     },
-    "ratings": {
+    "grades": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::rating.rating",
+      "target": "api::grade.grade",
       "mappedBy": "article"
     }
   }

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * rating router.
+ * grade router.
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::rating.rating');
+module.exports = createCoreRouter('api::grade.grade');

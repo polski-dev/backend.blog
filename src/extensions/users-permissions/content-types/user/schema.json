@@ -81,16 +81,16 @@
       "target": "api::articles.articles",
       "mappedBy": "author"
     },
-    "ratings": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::rating.rating",
-      "mappedBy": "author"
-    },
     "videos": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::video.video",
+      "mappedBy": "author"
+    },
+    "grades": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::grade.grade",
       "mappedBy": "author"
     }
   }

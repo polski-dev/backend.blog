@@ -92,6 +92,13 @@
       "relation": "oneToMany",
       "target": "api::grade.grade",
       "mappedBy": "author"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

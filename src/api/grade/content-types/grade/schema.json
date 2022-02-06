@@ -33,6 +33,12 @@
       "relation": "manyToOne",
       "target": "api::articles.articles",
       "inversedBy": "grades"
+    },
+    "video": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::video.video",
+      "inversedBy": "grades"
     }
   }
 }

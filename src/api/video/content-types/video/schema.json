@@ -50,6 +50,12 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "grades": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::grade.grade",
+      "mappedBy": "video"
     }
   }
 }

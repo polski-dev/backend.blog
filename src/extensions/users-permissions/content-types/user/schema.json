@@ -24,7 +24,8 @@
       "type": "email",
       "minLength": 6,
       "configurable": false,
-      "required": true
+      "required": true,
+      "private": true
     },
     "provider": {
       "type": "string",
@@ -94,9 +95,7 @@
       "mappedBy": "author"
     },
     "avatar": {
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false
     }

@@ -98,9 +98,10 @@
     "avatar": {
       "type": "media",
       "multiple": false,
-      "required": true,
-      "allowedTypes": ["images"],
-      "private": false
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

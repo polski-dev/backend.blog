@@ -25,7 +25,8 @@
       "minLength": 6,
       "configurable": false,
       "required": true,
-      "private": true
+      "private": true,
+      "unique": true
     },
     "provider": {
       "type": "string",
@@ -95,9 +96,11 @@
       "mappedBy": "author"
     },
     "avatar": {
-      "allowedTypes": ["images"],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"],
+      "private": false
     }
   }
 }

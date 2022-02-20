@@ -102,6 +102,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "views": {
+      "type": "integer"
     }
   }
 }

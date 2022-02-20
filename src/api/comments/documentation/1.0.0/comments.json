@@ -2627,6 +2627,9 @@
                                               }
                                             }
                                           },
+                                          "views": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -5628,6 +5631,9 @@
                                             }
                                           }
                                         },
+                                        "views": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -8547,6 +8553,9 @@
                                             }
                                           }
                                         },
+                                        "views": {
+                                          "type": "integer"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -11456,6 +11465,9 @@
                                               }
                                             }
                                           }
+                                        },
+                                        "views": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",

@@ -56,6 +56,12 @@
       "relation": "oneToMany",
       "target": "api::grade.grade",
       "mappedBy": "video"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tags.tags",
+      "mappedBy": "video"
     }
   }
 }

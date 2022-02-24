@@ -61,7 +61,8 @@
     },
     "content": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "default": "Opis.."
     }
   }
 }

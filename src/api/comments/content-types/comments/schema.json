@@ -28,6 +28,12 @@
       "relation": "manyToOne",
       "target": "api::articles.articles",
       "inversedBy": "comments"
+    },
+    "video": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::video.video",
+      "inversedBy": "comments"
     }
   }
 }

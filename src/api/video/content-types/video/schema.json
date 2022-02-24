@@ -20,7 +20,8 @@
     "comments": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::comments.comments"
+      "target": "api::comments.comments",
+      "mappedBy": "video"
     },
     "author": {
       "type": "relation",
@@ -65,7 +66,8 @@
     },
     "content": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "default": "Opis..."
     }
   }
 }

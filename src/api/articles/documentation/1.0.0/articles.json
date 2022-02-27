@@ -1000,26 +1000,6 @@
                                                                                                   "title": {
                                                                                                     "type": "string"
                                                                                                   },
-                                                                                                  "comments": {
-                                                                                                    "type": "object",
-                                                                                                    "properties": {
-                                                                                                      "data": {
-                                                                                                        "type": "array",
-                                                                                                        "items": {
-                                                                                                          "type": "object",
-                                                                                                          "properties": {
-                                                                                                            "id": {
-                                                                                                              "type": "string"
-                                                                                                            },
-                                                                                                            "attributes": {
-                                                                                                              "type": "object",
-                                                                                                              "properties": {}
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  },
                                                                                                   "author": {
                                                                                                     "type": "object",
                                                                                                     "properties": {
@@ -1560,6 +1540,26 @@
                                                                                                   },
                                                                                                   "content": {
                                                                                                     "type": "string"
+                                                                                                  },
+                                                                                                  "comments": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {
+                                                                                                      "data": {
+                                                                                                        "type": "array",
+                                                                                                        "items": {
+                                                                                                          "type": "object",
+                                                                                                          "properties": {
+                                                                                                            "id": {
+                                                                                                              "type": "string"
+                                                                                                            },
+                                                                                                            "attributes": {
+                                                                                                              "type": "object",
+                                                                                                              "properties": {}
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
                                                                                                   },
                                                                                                   "createdAt": {
                                                                                                     "type": "string",
@@ -4449,26 +4449,6 @@
                                                                                                 "title": {
                                                                                                   "type": "string"
                                                                                                 },
-                                                                                                "comments": {
-                                                                                                  "type": "object",
-                                                                                                  "properties": {
-                                                                                                    "data": {
-                                                                                                      "type": "array",
-                                                                                                      "items": {
-                                                                                                        "type": "object",
-                                                                                                        "properties": {
-                                                                                                          "id": {
-                                                                                                            "type": "string"
-                                                                                                          },
-                                                                                                          "attributes": {
-                                                                                                            "type": "object",
-                                                                                                            "properties": {}
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  }
-                                                                                                },
                                                                                                 "author": {
                                                                                                   "type": "object",
                                                                                                   "properties": {
@@ -5009,6 +4989,26 @@
                                                                                                 },
                                                                                                 "content": {
                                                                                                   "type": "string"
+                                                                                                },
+                                                                                                "comments": {
+                                                                                                  "type": "object",
+                                                                                                  "properties": {
+                                                                                                    "data": {
+                                                                                                      "type": "array",
+                                                                                                      "items": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                          "id": {
+                                                                                                            "type": "string"
+                                                                                                          },
+                                                                                                          "attributes": {
+                                                                                                            "type": "object",
+                                                                                                            "properties": {}
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
                                                                                                 },
                                                                                                 "createdAt": {
                                                                                                   "type": "string",
@@ -7836,26 +7836,6 @@
                                                                                                 "title": {
                                                                                                   "type": "string"
                                                                                                 },
-                                                                                                "comments": {
-                                                                                                  "type": "object",
-                                                                                                  "properties": {
-                                                                                                    "data": {
-                                                                                                      "type": "array",
-                                                                                                      "items": {
-                                                                                                        "type": "object",
-                                                                                                        "properties": {
-                                                                                                          "id": {
-                                                                                                            "type": "string"
-                                                                                                          },
-                                                                                                          "attributes": {
-                                                                                                            "type": "object",
-                                                                                                            "properties": {}
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  }
-                                                                                                },
                                                                                                 "author": {
                                                                                                   "type": "object",
                                                                                                   "properties": {
@@ -8396,6 +8376,26 @@
                                                                                                 },
                                                                                                 "content": {
                                                                                                   "type": "string"
+                                                                                                },
+                                                                                                "comments": {
+                                                                                                  "type": "object",
+                                                                                                  "properties": {
+                                                                                                    "data": {
+                                                                                                      "type": "array",
+                                                                                                      "items": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                          "id": {
+                                                                                                            "type": "string"
+                                                                                                          },
+                                                                                                          "attributes": {
+                                                                                                            "type": "object",
+                                                                                                            "properties": {}
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
                                                                                                 },
                                                                                                 "createdAt": {
                                                                                                   "type": "string",
@@ -11194,26 +11194,6 @@
                                                                                                 "title": {
                                                                                                   "type": "string"
                                                                                                 },
-                                                                                                "comments": {
-                                                                                                  "type": "object",
-                                                                                                  "properties": {
-                                                                                                    "data": {
-                                                                                                      "type": "array",
-                                                                                                      "items": {
-                                                                                                        "type": "object",
-                                                                                                        "properties": {
-                                                                                                          "id": {
-                                                                                                            "type": "string"
-                                                                                                          },
-                                                                                                          "attributes": {
-                                                                                                            "type": "object",
-                                                                                                            "properties": {}
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  }
-                                                                                                },
                                                                                                 "author": {
                                                                                                   "type": "object",
                                                                                                   "properties": {
@@ -11754,6 +11734,26 @@
                                                                                                 },
                                                                                                 "content": {
                                                                                                   "type": "string"
+                                                                                                },
+                                                                                                "comments": {
+                                                                                                  "type": "object",
+                                                                                                  "properties": {
+                                                                                                    "data": {
+                                                                                                      "type": "array",
+                                                                                                      "items": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                          "id": {
+                                                                                                            "type": "string"
+                                                                                                          },
+                                                                                                          "attributes": {
+                                                                                                            "type": "object",
+                                                                                                            "properties": {}
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
                                                                                                 },
                                                                                                 "createdAt": {
                                                                                                   "type": "string",

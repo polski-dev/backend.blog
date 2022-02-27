@@ -17,12 +17,6 @@
       "required": true,
       "unique": true
     },
-    "comments": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::comments.comments",
-      "mappedBy": "video"
-    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
@@ -68,6 +62,12 @@
       "type": "richtext",
       "required": true,
       "default": "Opis..."
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comments.comments",
+      "mappedBy": "video"
     }
   }
 }

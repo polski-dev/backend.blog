@@ -10,7 +10,7 @@ module.exports = {
     const { views } = await strapi.db
       .query("api::articles.articles")
       .update({ where: { id: ctx.params.id }, data: { views: article.views + 1 } });
-    ctx.body = { views };
+    ctx.body = { data: { views } };
   },
 
   async viewsVideo(ctx, next) {
@@ -18,7 +18,7 @@ module.exports = {
     const { views } = await strapi.db
       .query("api::video.video")
       .update({ where: { id: ctx.params.id }, data: { views: video.views + 1 } });
-    ctx.body = { views };
+    ctx.body = { data: { views } };
   },
 
   async viewsUser(ctx, next) {
@@ -26,7 +26,7 @@ module.exports = {
     const { views } = await strapi.db
       .query("plugin::users-permissions.user")
       .update({ where: { id: ctx.params.id }, data: { views: user.views + 1 } });
-    ctx.body = { views };
+    ctx.body = { data: { views } };
   },
 
   async viewsTag(ctx, next) {
@@ -34,6 +34,6 @@ module.exports = {
     const { views } = await strapi.db
       .query("api::tags.tags")
       .update({ where: { id: ctx.params.id }, data: { views: tag.views + 1 } });
-    ctx.body = { views };
+    ctx.body = { data: { views } };
   },
 };

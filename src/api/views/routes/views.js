@@ -7,7 +7,7 @@
 module.exports = {
   routes: [
     {
-      method: "GET",
+      method: "POST",
       path: "/views/article/:id",
       handler: "views.viewsArticle",
       config: {
@@ -15,7 +15,7 @@ module.exports = {
       },
     },
     {
-      method: "GET",
+      method: "POST",
       path: "/views/video/:id",
       handler: "views.viewsVideo",
       config: {
@@ -23,7 +23,7 @@ module.exports = {
       },
     },
     {
-      method: "GET",
+      method: "POST",
       path: "/views/user/:id",
       handler: "views.viewsUser",
       config: {
@@ -31,7 +31,7 @@ module.exports = {
       },
     },
     {
-      method: "GET",
+      method: "POST",
       path: "/views/tag/:id",
       handler: "views.viewsTag",
       config: {

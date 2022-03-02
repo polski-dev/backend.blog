@@ -10,6 +10,9 @@ module.exports = {
       where: {
         article: { id: ctx.params.id },
       },
+      populate: {
+        grade: true,
+      },
     });
   },
 };

@@ -16,15 +16,7 @@ module.exports = {
       },
     });
 
-    if (!!grade && isGradeTypeTrue && grade?.voice != ctx.request.body.grade)
-      await strapi.db.query("api::grade.grade").delete({
-        where: {
-          article: { id: ctx.request.params.id },
-          author: { id: ctx.state.user.id },
-        },
-      });
-
-    if (isGradeTypeTrue && grade?.voice != ctx.request.body.grade) {
+    if (isGradeTypeTrue && !grade) {
       const gradeAdd = await strapi.db.query("api::grade.grade").create({
         data: {
           voice: ctx.request.body.grade,
@@ -33,6 +25,8 @@ module.exports = {
         },
       });
       ctx.body = { data: { voice: gradeAdd.voice, update: true } };
-    } else ctx.body = { data: { voice: grade.voice, update: false } };
+    } else {
+      ctx.body = { data: { voice: grade.voice, update: false } };
+    }
   },
 };

@@ -14,5 +14,10 @@ module.exports = {
         auth: false,
       },
     },
+    {
+      method: "POST",
+      path: "/article/:id/comment",
+      handler: "comment.add",
+    },
   ],
 };

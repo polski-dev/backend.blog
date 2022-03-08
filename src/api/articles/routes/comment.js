@@ -8,7 +8,7 @@ module.exports = {
   routes: [
     {
       method: "GET",
-      path: "/article/:id/comment",
+      path: "/article/:id/comment/:page",
       handler: "comment.find",
       config: {
         auth: false,

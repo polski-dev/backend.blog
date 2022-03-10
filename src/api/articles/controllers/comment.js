@@ -39,6 +39,16 @@ module.exports = {
       },
       limit: 10,
       offset: ctx.request.params.page - 1 === 0 ? 0 : (ctx.request.params.page - 1) * 10,
+      populate: {
+        author: {
+          select: ["username"],
+          populate: {
+            avatar: {
+              select: ["url"],
+            },
+          },
+        },
+      },
     });
 
     ctx.body = {

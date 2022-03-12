@@ -52,17 +52,13 @@ module.exports = {
     });
 
     ctx.body = {
-      data: {
-        comment: {
-          data: commentList,
-          meta: {
-            pagination: {
-              page: parseInt(ctx.request.params.page),
-              total: commentQuantity,
-              pageSize: 10,
-              pageCount: Math.ceil(commentQuantity / 10),
-            },
-          },
+      data: commentList,
+      meta: {
+        pagination: {
+          page: parseInt(ctx.request.params.page),
+          total: commentQuantity,
+          pageSize: 10,
+          pageCount: Math.ceil(commentQuantity / 10),
         },
       },
     };

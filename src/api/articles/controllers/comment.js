@@ -52,6 +52,8 @@ module.exports = {
       },
     });
 
+    console.log(commentList);
+
     ctx.body = {
       data: commentList,
       meta: {

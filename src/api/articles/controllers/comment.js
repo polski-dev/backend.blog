@@ -38,6 +38,7 @@ module.exports = {
         article: { id: ctx.request.params.id },
       },
       limit: 10,
+      sort: { createdAt: "desc" },
       offset: ctx.request.params.page - 1 === 0 ? 0 : (ctx.request.params.page - 1) * 10,
       populate: {
         author: {

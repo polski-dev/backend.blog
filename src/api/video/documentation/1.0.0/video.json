@@ -4,6 +4,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -3449,11 +3450,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/videos"
       },
       "post": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -6795,6 +6797,7 @@
           "Video"
         ],
         "parameters": [],
+        "operationId": "post/videos",
         "requestBody": {
           "required": true,
           "content": {
@@ -6843,6 +6846,7 @@
       "get": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -10195,11 +10199,12 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "get/videos/{id}"
       },
       "put": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -13552,6 +13557,7 @@
             }
           }
         ],
+        "operationId": "put/videos/{id}",
         "requestBody": {
           "required": true,
           "content": {
@@ -13685,6 +13691,7 @@
       "delete": {
         "responses": {
           "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -13855,7 +13862,7 @@
             }
           }
         ],
-        "requestBody": {}
+        "operationId": "delete/videos/{id}"
       }
     }
   }

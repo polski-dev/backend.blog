@@ -52,6 +52,12 @@
       "relation": "manyToOne",
       "target": "api::video.video",
       "inversedBy": "tags"
+    },
+    "skilksuser": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "skilks"
     }
   }
 }

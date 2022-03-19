@@ -106,6 +106,51 @@
     "views": {
       "type": "integer",
       "required": false
+    },
+    "followusers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "followingme"
+    },
+    "followingme": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "followusers"
+    },
+    "about": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "website": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "tiktok": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "skilks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tags.tags",
+      "mappedBy": "skilksuser"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
     }
   }
 }

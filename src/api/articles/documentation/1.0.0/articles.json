@@ -2008,6 +2008,91 @@
                                                                                     "views": {
                                                                                       "type": "integer"
                                                                                     },
+                                                                                    "followusers": {
+                                                                                      "type": "object",
+                                                                                      "properties": {
+                                                                                        "data": {
+                                                                                          "type": "array",
+                                                                                          "items": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                              "id": {
+                                                                                                "type": "string"
+                                                                                              },
+                                                                                              "attributes": {
+                                                                                                "type": "object",
+                                                                                                "properties": {}
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "followingme": {
+                                                                                      "type": "object",
+                                                                                      "properties": {
+                                                                                        "data": {
+                                                                                          "type": "object",
+                                                                                          "properties": {
+                                                                                            "id": {
+                                                                                              "type": "string"
+                                                                                            },
+                                                                                            "attributes": {
+                                                                                              "type": "object",
+                                                                                              "properties": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "about": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "birthday": {
+                                                                                      "type": "string",
+                                                                                      "format": "date"
+                                                                                    },
+                                                                                    "website": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "youtube": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "instagram": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "tiktok": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "github": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "skilks": {
+                                                                                      "type": "object",
+                                                                                      "properties": {
+                                                                                        "data": {
+                                                                                          "type": "array",
+                                                                                          "items": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                              "id": {
+                                                                                                "type": "string"
+                                                                                              },
+                                                                                              "attributes": {
+                                                                                                "type": "object",
+                                                                                                "properties": {}
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "city": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "country": {
+                                                                                      "type": "string"
+                                                                                    },
                                                                                     "createdAt": {
                                                                                       "type": "string",
                                                                                       "format": "date-time"
@@ -2632,6 +2717,23 @@
                                               }
                                             },
                                             "video": {
+                                              "type": "object",
+                                              "properties": {
+                                                "data": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "id": {
+                                                      "type": "string"
+                                                    },
+                                                    "attributes": {
+                                                      "type": "object",
+                                                      "properties": {}
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "skilksuser": {
                                               "type": "object",
                                               "properties": {
                                                 "data": {
@@ -5454,6 +5556,91 @@
                                                                                   "views": {
                                                                                     "type": "integer"
                                                                                   },
+                                                                                  "followusers": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "data": {
+                                                                                        "type": "array",
+                                                                                        "items": {
+                                                                                          "type": "object",
+                                                                                          "properties": {
+                                                                                            "id": {
+                                                                                              "type": "string"
+                                                                                            },
+                                                                                            "attributes": {
+                                                                                              "type": "object",
+                                                                                              "properties": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "followingme": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "data": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                          "id": {
+                                                                                            "type": "string"
+                                                                                          },
+                                                                                          "attributes": {
+                                                                                            "type": "object",
+                                                                                            "properties": {}
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "about": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "birthday": {
+                                                                                    "type": "string",
+                                                                                    "format": "date"
+                                                                                  },
+                                                                                  "website": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "youtube": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "instagram": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "tiktok": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "github": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "skilks": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "data": {
+                                                                                        "type": "array",
+                                                                                        "items": {
+                                                                                          "type": "object",
+                                                                                          "properties": {
+                                                                                            "id": {
+                                                                                              "type": "string"
+                                                                                            },
+                                                                                            "attributes": {
+                                                                                              "type": "object",
+                                                                                              "properties": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "city": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "country": {
+                                                                                    "type": "string"
+                                                                                  },
                                                                                   "createdAt": {
                                                                                     "type": "string",
                                                                                     "format": "date-time"
@@ -6078,6 +6265,23 @@
                                             }
                                           },
                                           "video": {
+                                            "type": "object",
+                                            "properties": {
+                                              "data": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "skilksuser": {
                                             "type": "object",
                                             "properties": {
                                               "data": {
@@ -8839,6 +9043,91 @@
                                                                                   "views": {
                                                                                     "type": "integer"
                                                                                   },
+                                                                                  "followusers": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "data": {
+                                                                                        "type": "array",
+                                                                                        "items": {
+                                                                                          "type": "object",
+                                                                                          "properties": {
+                                                                                            "id": {
+                                                                                              "type": "string"
+                                                                                            },
+                                                                                            "attributes": {
+                                                                                              "type": "object",
+                                                                                              "properties": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "followingme": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "data": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                          "id": {
+                                                                                            "type": "string"
+                                                                                          },
+                                                                                          "attributes": {
+                                                                                            "type": "object",
+                                                                                            "properties": {}
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "about": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "birthday": {
+                                                                                    "type": "string",
+                                                                                    "format": "date"
+                                                                                  },
+                                                                                  "website": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "youtube": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "instagram": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "tiktok": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "github": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "skilks": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "data": {
+                                                                                        "type": "array",
+                                                                                        "items": {
+                                                                                          "type": "object",
+                                                                                          "properties": {
+                                                                                            "id": {
+                                                                                              "type": "string"
+                                                                                            },
+                                                                                            "attributes": {
+                                                                                              "type": "object",
+                                                                                              "properties": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "city": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "country": {
+                                                                                    "type": "string"
+                                                                                  },
                                                                                   "createdAt": {
                                                                                     "type": "string",
                                                                                     "format": "date-time"
@@ -9463,6 +9752,23 @@
                                             }
                                           },
                                           "video": {
+                                            "type": "object",
+                                            "properties": {
+                                              "data": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "skilksuser": {
                                             "type": "object",
                                             "properties": {
                                               "data": {
@@ -12194,6 +12500,91 @@
                                                                                   "views": {
                                                                                     "type": "integer"
                                                                                   },
+                                                                                  "followusers": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "data": {
+                                                                                        "type": "array",
+                                                                                        "items": {
+                                                                                          "type": "object",
+                                                                                          "properties": {
+                                                                                            "id": {
+                                                                                              "type": "string"
+                                                                                            },
+                                                                                            "attributes": {
+                                                                                              "type": "object",
+                                                                                              "properties": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "followingme": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "data": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                          "id": {
+                                                                                            "type": "string"
+                                                                                          },
+                                                                                          "attributes": {
+                                                                                            "type": "object",
+                                                                                            "properties": {}
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "about": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "birthday": {
+                                                                                    "type": "string",
+                                                                                    "format": "date"
+                                                                                  },
+                                                                                  "website": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "youtube": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "instagram": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "tiktok": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "github": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "skilks": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "data": {
+                                                                                        "type": "array",
+                                                                                        "items": {
+                                                                                          "type": "object",
+                                                                                          "properties": {
+                                                                                            "id": {
+                                                                                              "type": "string"
+                                                                                            },
+                                                                                            "attributes": {
+                                                                                              "type": "object",
+                                                                                              "properties": {}
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  "city": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "country": {
+                                                                                    "type": "string"
+                                                                                  },
                                                                                   "createdAt": {
                                                                                     "type": "string",
                                                                                     "format": "date-time"
@@ -12818,6 +13209,23 @@
                                             }
                                           },
                                           "video": {
+                                            "type": "object",
+                                            "properties": {
+                                              "data": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "skilksuser": {
                                             "type": "object",
                                             "properties": {
                                               "data": {

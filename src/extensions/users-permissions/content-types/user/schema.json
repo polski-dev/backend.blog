@@ -109,13 +109,13 @@
     },
     "followusers": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "followingme"
+      "mappedBy": "followingmes"
     },
-    "followingme": {
+    "followingmes": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
       "inversedBy": "followusers"
     },

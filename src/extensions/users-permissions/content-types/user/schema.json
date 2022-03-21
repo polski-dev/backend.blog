@@ -148,6 +148,12 @@
     },
     "country": {
       "type": "string"
+    },
+    "learn": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tags.tags",
+      "inversedBy": "learnuser"
     }
   }
 }

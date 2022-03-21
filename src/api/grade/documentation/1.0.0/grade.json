@@ -2715,10 +2715,6 @@
                                           "about": {
                                             "type": "string"
                                           },
-                                          "birthday": {
-                                            "type": "string",
-                                            "format": "date"
-                                          },
                                           "website": {
                                             "type": "string"
                                           },
@@ -5862,10 +5858,6 @@
                                         "about": {
                                           "type": "string"
                                         },
-                                        "birthday": {
-                                          "type": "string",
-                                          "format": "date"
-                                        },
                                         "website": {
                                           "type": "string"
                                         },
@@ -8933,10 +8925,6 @@
                                         "about": {
                                           "type": "string"
                                         },
-                                        "birthday": {
-                                          "type": "string",
-                                          "format": "date"
-                                        },
                                         "website": {
                                           "type": "string"
                                         },
@@ -11988,10 +11976,6 @@
                                         },
                                         "about": {
                                           "type": "string"
-                                        },
-                                        "birthday": {
-                                          "type": "string",
-                                          "format": "date"
                                         },
                                         "website": {
                                           "type": "string"

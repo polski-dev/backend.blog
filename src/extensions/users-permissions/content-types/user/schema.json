@@ -122,9 +122,6 @@
     "about": {
       "type": "string"
     },
-    "birthday": {
-      "type": "date"
-    },
     "website": {
       "type": "string"
     },

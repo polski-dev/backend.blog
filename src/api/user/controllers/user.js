@@ -80,23 +80,47 @@ module.exports = {
 
     const subscriptionsNew = subscriptions.followingmes.filter((sub) => sub.id != userIdAuth);
 
+    let answer;
+
     if (subscriptionsNew.length === subscriptions.followingmes.length)
-      return (ctx.body = await strapi.db.query("plugin::users-permissions.user").update({
+      return (answer = await strapi.db.query("plugin::users-permissions.user").update({
         where: {
           id: userId,
         },
+        select: ["id", "username"],
         data: {
           followingmes: [...subscriptions.followingmes, { id: userIdAuth }],
         },
       }));
 
-    ctx.body = await strapi.db.query("plugin::users-permissions.user").update({
+    answer = await strapi.db.query("plugin::users-permissions.user").update({
       where: {
         id: userId,
       },
+      select: ["id", "username"],
       data: {
         followingmes: subscriptionsNew,
       },
     });
+
+    if (!!answer.id) return (ctx.body = { data: { ...answer, update: true } });
+
+    ctx.body = {
+      data: { ...answer, update: false, id: null, username: null },
+      error: {
+        status: 400,
+        name: "AppError",
+        message: `Field app`,
+        details: {
+          errors: [
+            {
+              path: [`id: ${answer.id}`, `username: ${answer.username}`],
+              message: `Field app`,
+              name: "AppError",
+            },
+          ],
+        },
+      },
+    };
   },
 };

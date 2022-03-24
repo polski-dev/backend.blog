@@ -55,14 +55,14 @@ module.exports = {
         data: null,
         error: {
           status: 400,
-          name: "ValidationError",
-          message: `Field is a required field`,
+          name: "AppError",
+          message: `Field app`,
           details: {
             errors: [
               {
-                path: [`userId: ${userIdAuth}`, `userIdAuth: ${userIdAuth}`],
-                message: `Field is a required field`,
-                name: "ValidationError",
+                path: [`userId: ${userId}`, `userIdAuth: ${userIdAuth}`],
+                message: `Field app`,
+                name: "AppError",
               },
             ],
           },
@@ -83,7 +83,7 @@ module.exports = {
     let answer;
 
     if (subscriptionsNew.length === subscriptions.followingmes.length)
-      return (answer = await strapi.db.query("plugin::users-permissions.user").update({
+      answer = await strapi.db.query("plugin::users-permissions.user").update({
         where: {
           id: userId,
         },
@@ -91,36 +91,36 @@ module.exports = {
         data: {
           followingmes: [...subscriptions.followingmes, { id: userIdAuth }],
         },
-      }));
-
-    answer = await strapi.db.query("plugin::users-permissions.user").update({
-      where: {
-        id: userId,
-      },
-      select: ["id", "username"],
-      data: {
-        followingmes: subscriptionsNew,
-      },
-    });
-
-    if (!!answer.id) return (ctx.body = { data: { ...answer, update: true } });
-
-    ctx.body = {
-      data: { ...answer, update: false, id: null, username: null },
-      error: {
-        status: 400,
-        name: "AppError",
-        message: `Field app`,
-        details: {
-          errors: [
-            {
-              path: [`id: ${answer.id}`, `username: ${answer.username}`],
-              message: `Field app`,
-              name: "AppError",
-            },
-          ],
+      });
+    else
+      answer = await strapi.db.query("plugin::users-permissions.user").update({
+        where: {
+          id: userId,
         },
-      },
-    };
+        select: ["id", "username"],
+        data: {
+          followingmes: subscriptionsNew,
+        },
+      });
+    console.log(answer);
+    if (!!answer?.id) return (ctx.body = { data: { update: true, ...answer } });
+    else
+      ctx.body = {
+        data: { update: false, id: null, username: null },
+        error: {
+          status: 400,
+          name: "AppError",
+          message: `Field app`,
+          details: {
+            errors: [
+              {
+                path: [`id: ${answer.id}`, `username: ${answer.username}`],
+                message: `Field app`,
+                name: "AppError",
+              },
+            ],
+          },
+        },
+      };
   },
 };

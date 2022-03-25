@@ -88,6 +88,7 @@ module.exports = {
           id: userId,
         },
         select: ["id", "username"],
+
         data: {
           followingmes: [...subscriptions.followingmes, { id: userIdAuth }],
         },
@@ -102,7 +103,7 @@ module.exports = {
           followingmes: subscriptionsNew,
         },
       });
-    console.log(answer);
+
     if (!!answer?.id) return (ctx.body = { data: { update: true, ...answer } });
     else
       ctx.body = {

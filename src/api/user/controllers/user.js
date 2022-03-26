@@ -5,11 +5,73 @@
  */
 
 module.exports = {
+  async statistics(ctx, next) {
+    const userId = parseInt(ctx.request.params.id);
+
+    const views = await strapi.db.query("plugin::users-permissions.user").findOne({
+      where: {
+        id: userId,
+      },
+      select: ["views"],
+    });
+
+    const followingmes = await strapi.db.query("plugin::users-permissions.user").count({
+      where: {
+        followusers: { id: userId },
+      },
+    });
+
+    const followuser = await strapi.db.query("plugin::users-permissions.user").count({
+      where: {
+        id: userId,
+        followusers: {},
+      },
+    });
+
+    const comments = await strapi.db.query("api::comments.comments").count({
+      where: {
+        author: { id: userId },
+      },
+    });
+
+    const followTags = await strapi.db.query("api::tags.tags").count({
+      where: {
+        users: { id: userId },
+      },
+    });
+
+    const addGrade = await strapi.db.query("api::grade.grade").count({
+      where: {
+        author: { id: userId },
+      },
+    });
+
+    const addVideo = await strapi.db.query("api::articles.articles").count({
+      where: {
+        author: { id: userId },
+      },
+    });
+
+    const addArticle = await strapi.db.query("api::video.video").count({
+      where: {
+        author: { id: userId },
+      },
+    });
+
+    ctx.body = {
+      views: views.views,
+      followingmes,
+      followuser,
+      comments,
+      followTags,
+      addGrade,
+      addPosts: addVideo + addArticle,
+    };
+  },
+
   async status(ctx, next) {
     const userId = parseInt(ctx.request.params.id);
     const userIdAuth = ctx.state.user.id;
-
-    console.log(userIdAuth);
 
     if (!userId || !userIdAuth) {
       return (ctx.body = {

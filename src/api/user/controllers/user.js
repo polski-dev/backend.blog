@@ -8,6 +8,26 @@ module.exports = {
   async statistics(ctx, next) {
     const userId = parseInt(ctx.request.params.id);
 
+    if (!parseInt(userId)) {
+      return (ctx.body = {
+        data: null,
+        error: {
+          status: 400,
+          name: "ValidationError",
+          message: `Field is a required field`,
+          details: {
+            errors: [
+              {
+                path: [`userId: ${userIdAuth}`, `userIdAuth: ${userIdAuth}`],
+                message: `Field is a required field`,
+                name: "ValidationError",
+              },
+            ],
+          },
+        },
+      });
+    }
+
     const views = await strapi.db.query("plugin::users-permissions.user").findOne({
       where: {
         id: userId,
@@ -59,13 +79,15 @@ module.exports = {
     });
 
     ctx.body = {
-      views: views.views,
-      followingmes,
-      followuser,
-      comments,
-      followTags,
-      addGrade,
-      addPosts: addVideo + addArticle,
+      data: {
+        views: views.views,
+        followingmes,
+        followuser,
+        comments,
+        followTags,
+        addGrade,
+        addPosts: addVideo + addArticle,
+      },
     };
   },
 

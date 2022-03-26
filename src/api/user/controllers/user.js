@@ -9,6 +9,8 @@ module.exports = {
     const userId = parseInt(ctx.request.params.id);
     const userIdAuth = ctx.state.user.id;
 
+    console.log(userIdAuth);
+
     if (!userId || !userIdAuth) {
       return (ctx.body = {
         data: null,

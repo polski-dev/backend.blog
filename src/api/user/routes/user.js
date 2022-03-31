@@ -44,5 +44,15 @@ module.exports = {
       path: "/user/himself/data/password",
       handler: "user.himselfDataPasswordUpdate",
     },
+    {
+      method: "POST",
+      path: "/user/himself/data/delete",
+      handler: "user.himselfDelete",
+    },
+    {
+      method: "POST",
+      path: "/user/himself/data/changeavatar",
+      handler: "user.himselfChangeAvatar",
+    },
   ],
 };

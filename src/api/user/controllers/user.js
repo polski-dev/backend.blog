@@ -403,10 +403,14 @@ module.exports = {
     ctx.body = data;
   },
 
-  async himselfDataPasswordDelete(ctx, next) {
+  async himselfDelete(ctx, next) {
     const userIdAuth = ctx.state.user.id;
 
-    if (!userIdAuth || !passwordRegex.test(password)) {
+    const avatarId = await strapi.db.query("plugin::users-permissions.user").findOne({
+      where: { id: userIdAuth },
+    });
+
+    if (!userIdAuth) {
       return (ctx.body = {
         data: null,
         error: {
@@ -416,7 +420,7 @@ module.exports = {
           details: {
             errors: [
               {
-                path: [`userIdAuth: ${userIdAuth}`, `password: ${password}`],
+                path: [`userIdAuth: ${userIdAuth}`],
                 message: `Field app`,
                 name: "AppError",
               },
@@ -426,12 +430,54 @@ module.exports = {
       });
     }
 
-    const passwordNew = bcrypt.hashSync(password, 10);
-
-    const data = await strapi.db.query("plugin::users-permissions.user").update({
+    const data = await strapi.db.query("plugin::users-permissions.user").delete({
       where: { id: userIdAuth },
-      data: { password: passwordNew },
-      select: ["id", "password"],
+    });
+
+    ctx.body = data;
+  },
+
+  async himselfChangeAvatar(ctx, next) {
+    const userIdAuth = ctx.state.user.id;
+
+    console.log(ctx);
+
+    //const test = await strapi.plugins.upload.services.upload.upload({});
+
+    const avatarId = await strapi.db.query("plugin::users-permissions.user").findOne({
+      where: { id: userIdAuth },
+      select: ["id"],
+      populate: {
+        avatar: {
+          select: ["id"],
+        },
+      },
+    });
+
+    console.log(avatarId);
+
+    if (!userIdAuth) {
+      return (ctx.body = {
+        data: null,
+        error: {
+          status: 400,
+          name: "AppError",
+          message: `Field app`,
+          details: {
+            errors: [
+              {
+                path: [`userIdAuth: ${userIdAuth}`],
+                message: `Field app`,
+                name: "AppError",
+              },
+            ],
+          },
+        },
+      });
+    }
+
+    const data = await strapi.db.query("plugin::users-permissions.user").findOne({
+      where: { id: userIdAuth },
     });
 
     ctx.body = data;

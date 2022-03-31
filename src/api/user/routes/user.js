@@ -24,5 +24,25 @@ module.exports = {
       path: "/user/:id/subscribe/toggle",
       handler: "user.toggle",
     },
+    {
+      method: "POST",
+      path: "/user/himself/data",
+      handler: "user.himselfdata",
+    },
+    {
+      method: "POST",
+      path: "/user/himself/data/public",
+      handler: "user.himselfDataPublicUpdate",
+    },
+    {
+      method: "POST",
+      path: "/user/himself/data/email",
+      handler: "user.himselfDataEmailUpdate",
+    },
+    {
+      method: "POST",
+      path: "/user/himself/data/password",
+      handler: "user.himselfDataPasswordUpdate",
+    },
   ],
 };

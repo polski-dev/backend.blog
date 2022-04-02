@@ -1,5 +1,6 @@
 "use strict";
 const bcrypt = require("bcryptjs");
+const formidable = require("formidable");
 
 /**
  * users  router.
@@ -260,7 +261,7 @@ module.exports = {
       ],
     });
 
-    ctx.body = data;
+    ctx.body = { data };
   },
 
   async himselfDataPublicUpdate(ctx, next) {
@@ -303,7 +304,7 @@ module.exports = {
       data,
     });
 
-    ctx.body = update;
+    ctx.body = { data: { ...update } };
   },
 
   async himselfDataEmailUpdate(ctx, next) {
@@ -400,7 +401,7 @@ module.exports = {
       select: ["id", "password"],
     });
 
-    ctx.body = data;
+    ctx.body = { data };
   },
 
   async himselfDelete(ctx, next) {
@@ -432,17 +433,37 @@ module.exports = {
 
     const data = await strapi.db.query("plugin::users-permissions.user").delete({
       where: { id: userIdAuth },
+      select: ["id"],
     });
 
-    ctx.body = data;
+    ctx.body = { data };
   },
 
-  async himselfChangeAvatar(ctx, next) {
+  async himselfChangeAvatar(ctx, next, ss) {
     const userIdAuth = ctx.state.user.id;
 
-    console.log(ctx);
+    const form = formidable({});
 
-    //const test = await strapi.plugins.upload.services.upload.upload({});
+    form.parse(ctx.req, (err, fields, files) => {
+      console.log(files);
+      console.log(fields);
+    });
+
+    if (ctx.is("image/*")) {
+      // const test2 = await strapi.plugins.upload.services.upload.upload({
+      //   files: {
+      //     path: body,
+      //     name: fileName,
+      //     type: res.headers["content-type"],
+      //     size: Number(res.headers["content-length"]),
+      //   },
+      // });
+      // console.log(test2);
+    }
+
+    const test = await strapi.db.query("plugin::upload.file").findMany();
+
+    // console.log(test);
 
     const avatarId = await strapi.db.query("plugin::users-permissions.user").findOne({
       where: { id: userIdAuth },
@@ -454,7 +475,7 @@ module.exports = {
       },
     });
 
-    console.log(avatarId);
+    // console.log(avatarId);
 
     if (!userIdAuth) {
       return (ctx.body = {

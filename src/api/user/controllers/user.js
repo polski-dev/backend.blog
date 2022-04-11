@@ -399,6 +399,11 @@ module.exports = {
       where: { id: userIdAuth },
       data: { password: passwordNew },
       select: ["id", "password"],
+      populate: {
+        avatar: {
+          select: ["url"],
+        },
+      },
     });
 
     ctx.body = { data };
@@ -442,65 +447,45 @@ module.exports = {
   async himselfChangeAvatar(ctx, next, ss) {
     const userIdAuth = ctx.state.user.id;
 
-    const form = formidable({});
+    if (
+      ctx.is("multipart/form-data") &&
+      ctx?.request?.files?.avatar?.type === ("image/png" || "image/jpg" || "image/jpeg")
+    ) {
+      const uploadFile = await strapi.plugins.upload.services.upload.upload({
+        data: {}, //mandatory declare the data(can be empty), otherwise it will give you an undefined error.
+        files: ctx.request.files.avatar,
+      });
 
-    form.parse(ctx.req, (err, fields, files) => {
-      console.log(files);
-      console.log(fields);
-    });
-
-    if (ctx.is("image/*")) {
-      // const test2 = await strapi.plugins.upload.services.upload.upload({
-      //   files: {
-      //     path: body,
-      //     name: fileName,
-      //     type: res.headers["content-type"],
-      //     size: Number(res.headers["content-length"]),
-      //   },
-      // });
-      // console.log(test2);
-    }
-
-    const test = await strapi.db.query("plugin::upload.file").findMany();
-
-    // console.log(test);
-
-    const avatarId = await strapi.db.query("plugin::users-permissions.user").findOne({
-      where: { id: userIdAuth },
-      select: ["id"],
-      populate: {
-        avatar: {
-          select: ["id"],
-        },
-      },
-    });
-
-    // console.log(avatarId);
-
-    if (!userIdAuth) {
-      return (ctx.body = {
-        data: null,
-        error: {
-          status: 400,
-          name: "AppError",
-          message: `Field app`,
-          details: {
-            errors: [
-              {
-                path: [`userIdAuth: ${userIdAuth}`],
-                message: `Field app`,
-                name: "AppError",
-              },
-            ],
+      const data = await strapi.db.query("plugin::users-permissions.user").update({
+        where: { id: userIdAuth },
+        data: { avatar: uploadFile[0].id },
+        select: ["id", "username"],
+        populate: {
+          avatar: {
+            select: ["url"],
           },
         },
       });
+
+      return (ctx.body = data);
     }
 
-    const data = await strapi.db.query("plugin::users-permissions.user").findOne({
-      where: { id: userIdAuth },
-    });
-
-    ctx.body = data;
+    ctx.body = {
+      data: null,
+      error: {
+        status: 400,
+        name: "AppError",
+        message: `files fild empty`,
+        details: {
+          errors: [
+            {
+              path: [`files: fild empty`],
+              message: `files fild empty`,
+              name: "AppError",
+            },
+          ],
+        },
+      },
+    };
   },
 };

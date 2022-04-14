@@ -446,13 +446,11 @@ module.exports = {
 
   async himselfChangeAvatar(ctx, next, ss) {
     const userIdAuth = ctx.state.user.id;
+    const type = ctx?.request?.files?.avatar?.type;
 
-    if (
-      ctx.is("multipart/form-data") &&
-      ctx?.request?.files?.avatar?.type === ("image/png" || "image/jpg" || "image/jpeg")
-    ) {
+    if (ctx.is("multipart/form-data") && (type === "image/png" || type === "image/jpg" || type === "image/jpeg")) {
       const uploadFile = await strapi.plugins.upload.services.upload.upload({
-        data: {}, //mandatory declare the data(can be empty), otherwise it will give you an undefined error.
+        data: {},
         files: ctx.request.files.avatar,
       });
 

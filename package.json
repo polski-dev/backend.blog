@@ -5,18 +5,19 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
+    "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "4.1.7",
-    "@strapi/plugin-graphql": "4.1.7",
-    "@strapi/plugin-i18n": "4.1.7",
-    "@strapi/plugin-users-permissions": "4.1.7",
-    "@strapi/provider-email-sendgrid": "^4.1.7",
-    "@strapi/provider-upload-aws-s3": "4.1.7",
-    "@strapi/strapi": "4.1.7",
+    "@strapi/plugin-documentation": "4.1.9",
+    "@strapi/plugin-graphql": "4.1.9",
+    "@strapi/plugin-i18n": "4.1.9",
+    "@strapi/plugin-users-permissions": "4.1.9",
+    "@strapi/provider-email-sendgrid": "^4.1.9",
+    "@strapi/provider-upload-aws-s3": "4.1.9",
+    "@strapi/strapi": "4.1.9",
     "pg": "^8.7.1",
     "pg-connection-string": "^2.5.0",
     "strapi-plugin-entity-relationship-chart": "^4.0.2"

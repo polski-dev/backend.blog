@@ -63,6 +63,28 @@
       "type": "richtext",
       "required": true,
       "default": "Opis.."
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "article",
+        "video",
+        "podcast"
+      ],
+      "required": true
+    },
+    "youtube": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "podcast": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "audios"
+      ]
     }
   }
 }

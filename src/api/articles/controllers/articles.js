@@ -93,7 +93,7 @@ module.exports = createCoreController("api::articles.articles", ({ strapi }) => 
         data: { title, author: userId, waitingroom: true, views: 0, cover: uploadFile[0].id, content, type, tags: allIdTags, youtube: youtube ? youtube : "" },
       });
 
-      return (ctx.body = data);
+      return (ctx.body = { data: data });
     }
 
     return (ctx.body = {

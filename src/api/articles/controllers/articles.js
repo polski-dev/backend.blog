@@ -90,7 +90,7 @@ module.exports = createCoreController("api::articles.articles", ({ strapi }) => 
       });
 
       const data = await strapi.db.query("api::articles.articles").create({
-        data: { title, waitingroom: true, views: 0, cover: uploadFile[0].id, content, type, tags: allIdTags, youtube: youtube ? youtube : "" },
+        data: { title, author: userId, waitingroom: true, views: 0, cover: uploadFile[0].id, content, type, tags: allIdTags, youtube: youtube ? youtube : "" },
       });
 
       return (ctx.body = data);

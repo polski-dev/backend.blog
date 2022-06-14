@@ -1,58 +1,59 @@
-# 🚀 Getting started with Strapi
+# POLSLSKI.DEV ( BLOG BACK END - API )
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+[DEMO](https://www.polski.dev).
 
-### `develop`
+# Description
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+It is project for all progrramer wich want create their blog, but not know how promotion their blog. The project do focus all blogs all programer in one pleace . This project use :
 
-```
-npm run develop
-# or
-yarn develop
-```
+- AWS
+- Strapi.js
+- REST API: Node.js + PostgreSQL ( [repositorie API ](https://github.com/polski-dev/backend.blog). )
 
-### `start`
+# How to run this project?
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+1. Download this project on your computer
+2. Make sure you have node.js installed [Link to Node.js ](https://nodejs.org) and database MongoDB
+3. After making sure that you have installed node.js, run the terminal and in the directory of this project run the command `yarn install`
+4. Create `.env` in main and add parametr:
 
-```
-npm run start
-# or
-yarn start
-```
+# SERVER
 
-### `build`
+- `PORT=1337`
+- `HOST=0.0.0.0`
+- `JWT_SECRET=xxxxxxxxxxxxxxxxxxxxx`
+- `API_TOKEN_SALT=xxxxxxxxxxxxxxxxxxxxx`
+- `ADMIN_JWT_SECRET=xxxxxxxxxxxxxxxxxxxxx`
+- `APP_KEYS=['xxxxxxxxxxxxxxxxxxxxx','xxxxxxxxxxxxxxxxxxxxx','xxxxxxxxxxxxxxxxxxxxx']
+- `MY_HEROKU_URL=xxxxxxxxxxxxxxxxxxxxx`
 
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+# DB
 
-```
-npm run build
-# or
-yarn build
-```
+- `DATABASE_URL=xxxxxxxxxxxxxxxxxxxxx`
 
-## ⚙️ Deployment
+# AWS
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
+- `AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxxxxxxxxx`
+- `AWS_ACCESS_SECRET=xxxxxxxxxxxxxxxxxxxxx`
+- `AWS_REGION=xxxxxxxxxxxxxxxxxxxxx`
+- `AWS_BUCKET=xxxxxxxxxxxxxxxxxxxxx`
 
-## 📚 Learn more
+# SENDGIRD
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+- `SENDGRID_API_KEY=xxxxxxxxxxxxxxxxxxxxx`
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+5. Then select one of the options:
 
-## ✨ Community
+### `yarn develop`
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+Runs the app in the development mode.\
+Open [http://localhost:1337/admin](http://localhost:1337/admin) to view it in the browser.
 
----
+### `yarn start`
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
-# polski.dev-backend
+Builds the app for production.
+It correctly bundles Strapi in production mode and optimizes the build for the best performance.
+
+## Learn More
+
+Thanks for your interest and I invite you to cooperation :)

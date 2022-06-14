@@ -24,8 +24,7 @@ It is project for all progrramer wich want create their blog, but not know how p
 - `JWT_SECRET=xxxxxxxxxxxxxxxxxxxxx`
 - `API_TOKEN_SALT=xxxxxxxxxxxxxxxxxxxxx`
 - `ADMIN_JWT_SECRET=xxxxxxxxxxxxxxxxxxxxx`
-- `APP_KEYS=['xxxxxxxxxxxxxxxxxxxxx','xxxxxxxxxxxxxxxxxxxxx','xxxxxxxxxxxxxxxxxxxxx']
-- `MY_HEROKU_URL=xxxxxxxxxxxxxxxxxxxxx`
+- `APP_KEYS=['xxxxxxxxxxxxxxxxxxxxx','xxxxxxxxxxxxxxxxxxxxx','xxxxxxxxxxxxxxxxxxxxx']`
 
 # DB
 

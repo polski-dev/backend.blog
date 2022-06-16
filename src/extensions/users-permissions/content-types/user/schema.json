@@ -77,19 +77,17 @@
       "target": "api::posts.posts",
       "mappedBy": "author"
     },
-    "grades": {
+    "ratings": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::grade.grade",
+      "target": "api::ratings.ratings",
       "mappedBy": "author"
     },
     "avatar": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
     "views": {
       "type": "integer",

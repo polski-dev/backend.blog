@@ -1,5 +1,5 @@
 module.exports = ({ env }) => ({
-  // ...
+  // UPLOAD
   upload: {
     config: {
       provider: "aws-s3",
@@ -13,7 +13,7 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  // ...
+  // MAIL
   email: {
     config: {
       provider: "sendgrid",
@@ -27,7 +27,7 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  // ...
+  // GRAPHQL
   graphql: {
     config: {
       endpoint: "/graphql",
@@ -40,5 +40,4 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  // ...
 });

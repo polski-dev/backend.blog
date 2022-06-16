@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "grades",
+  "collectionName": "rating",
   "info": {
-    "singularName": "grade",
-    "pluralName": "grades",
-    "displayName": "Grade",
+    "singularName": "ratings",
+    "pluralName": "rating",
+    "displayName": "Ratings",
     "description": ""
   },
   "options": {
@@ -22,13 +22,13 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "grades"
+      "inversedBy": "ratings"
     },
     "article": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::posts.posts",
-      "inversedBy": "grades"
+      "inversedBy": "ratings"
     }
   }
 }

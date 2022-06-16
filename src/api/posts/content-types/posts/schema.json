@@ -38,14 +38,12 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
-    "grades": {
+    "ratings": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::grade.grade",
+      "target": "api::ratings.ratings",
       "mappedBy": "post"
     },
     "content": {
@@ -55,11 +53,7 @@
     },
     "type": {
       "type": "enumeration",
-      "enum": [
-        "article",
-        "video",
-        "podcast"
-      ],
+      "enum": ["article", "video", "podcast"],
       "required": true
     },
     "youtube": {
@@ -71,9 +65,7 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "audios"
-      ]
+      "allowedTypes": ["audios"]
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "/grades": {
+  "/rating": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GradeListResponse"
+                "$ref": "#/components/schemas/RatingsListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Grade"
+        "Ratings"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/grades"
+      "operationId": "get/rating"
     },
     "post": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GradeResponse"
+                "$ref": "#/components/schemas/RatingsResponse"
               }
             }
           }
@@ -214,23 +214,23 @@
         }
       },
       "tags": [
-        "Grade"
+        "Ratings"
       ],
       "parameters": [],
-      "operationId": "post/grades",
+      "operationId": "post/rating",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GradeRequest"
+              "$ref": "#/components/schemas/RatingsRequest"
             }
           }
         }
       }
     }
   },
-  "/grades/{id}": {
+  "/rating/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -238,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GradeResponse"
+                "$ref": "#/components/schemas/RatingsResponse"
               }
             }
           }
@@ -295,7 +295,7 @@
         }
       },
       "tags": [
-        "Grade"
+        "Ratings"
       ],
       "parameters": [
         {
@@ -309,7 +309,7 @@
           }
         }
       ],
-      "operationId": "get/grades/{id}"
+      "operationId": "get/rating/{id}"
     },
     "put": {
       "responses": {
@@ -318,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GradeResponse"
+                "$ref": "#/components/schemas/RatingsResponse"
               }
             }
           }
@@ -375,7 +375,7 @@
         }
       },
       "tags": [
-        "Grade"
+        "Ratings"
       ],
       "parameters": [
         {
@@ -389,13 +389,13 @@
           }
         }
       ],
-      "operationId": "put/grades/{id}",
+      "operationId": "put/rating/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GradeRequest"
+              "$ref": "#/components/schemas/RatingsRequest"
             }
           }
         }
@@ -466,7 +466,7 @@
         }
       },
       "tags": [
-        "Grade"
+        "Ratings"
       ],
       "parameters": [
         {
@@ -480,7 +480,7 @@
           }
         }
       ],
-      "operationId": "delete/grades/{id}"
+      "operationId": "delete/rating/{id}"
     }
   }
 }

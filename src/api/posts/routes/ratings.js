@@ -8,8 +8,8 @@ module.exports = {
   routes: [
     {
       method: "POST",
-      path: "/posts/:id/grade",
-      handler: "grade.add",
+      path: "/posts/:id/ratings",
+      handler: "ratings.add",
     },
   ],
 };

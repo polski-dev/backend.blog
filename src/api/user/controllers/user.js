@@ -68,7 +68,7 @@ module.exports = {
       },
     });
 
-    const addVideo = await strapi.db.query("api::articles.articles").count({
+    const addVideo = await strapi.db.query("api::posts.posts").count({
       where: {
         author: { id: userId },
       },
@@ -242,23 +242,7 @@ module.exports = {
           select: ["url"],
         },
       },
-      select: [
-        "id",
-        "username",
-        "email",
-        "blocked",
-        "views",
-        "createdAt",
-        "updatedAt",
-        "about",
-        "website",
-        "youtube",
-        "instagram",
-        "tiktok",
-        "github",
-        "city",
-        "country",
-      ],
+      select: ["id", "username", "email", "blocked", "views", "createdAt", "updatedAt", "about", "website", "youtube", "instagram", "tiktok", "github", "city", "country"],
     });
 
     ctx.body = { data };
@@ -309,8 +293,7 @@ module.exports = {
 
   async himselfDataEmailUpdate(ctx, next) {
     const userIdAuth = ctx.state.user.id;
-    const emailRegex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     const { email } = ctx.request.body;
 

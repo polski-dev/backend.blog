@@ -4,7 +4,7 @@
   "info": {
     "singularName": "tags",
     "pluralName": "tag",
-    "displayName": "tags",
+    "displayName": "Tags",
     "description": ""
   },
   "options": {
@@ -26,14 +26,12 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ]
+      "allowedTypes": ["images"]
     },
-    "articles": {
+    "posts": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::articles.articles",
+      "target": "api::posts.posts",
       "mappedBy": "tags"
     },
     "views": {
@@ -46,12 +44,6 @@
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
       "inversedBy": "followtags"
-    },
-    "video": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::video.video",
-      "inversedBy": "tags"
     },
     "skilksuser": {
       "type": "relation",

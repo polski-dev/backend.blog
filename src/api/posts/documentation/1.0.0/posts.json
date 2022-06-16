@@ -1,5 +1,5 @@
 {
-  "/videos": {
+  "/post": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/VideoListResponse"
+                "$ref": "#/components/schemas/PostsListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Video"
+        "Posts"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/videos"
+      "operationId": "get/post"
     },
     "post": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/VideoResponse"
+                "$ref": "#/components/schemas/PostsResponse"
               }
             }
           }
@@ -214,23 +214,23 @@
         }
       },
       "tags": [
-        "Video"
+        "Posts"
       ],
       "parameters": [],
-      "operationId": "post/videos",
+      "operationId": "post/post",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/VideoRequest"
+              "$ref": "#/components/schemas/PostsRequest"
             }
           }
         }
       }
     }
   },
-  "/videos/{id}": {
+  "/post/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -238,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/VideoResponse"
+                "$ref": "#/components/schemas/PostsResponse"
               }
             }
           }
@@ -295,7 +295,7 @@
         }
       },
       "tags": [
-        "Video"
+        "Posts"
       ],
       "parameters": [
         {
@@ -309,7 +309,7 @@
           }
         }
       ],
-      "operationId": "get/videos/{id}"
+      "operationId": "get/post/{id}"
     },
     "put": {
       "responses": {
@@ -318,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/VideoResponse"
+                "$ref": "#/components/schemas/PostsResponse"
               }
             }
           }
@@ -375,7 +375,7 @@
         }
       },
       "tags": [
-        "Video"
+        "Posts"
       ],
       "parameters": [
         {
@@ -389,13 +389,13 @@
           }
         }
       ],
-      "operationId": "put/videos/{id}",
+      "operationId": "put/post/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/VideoRequest"
+              "$ref": "#/components/schemas/PostsRequest"
             }
           }
         }
@@ -466,7 +466,7 @@
         }
       },
       "tags": [
-        "Video"
+        "Posts"
       ],
       "parameters": [
         {
@@ -480,7 +480,7 @@
           }
         }
       ],
-      "operationId": "delete/videos/{id}"
+      "operationId": "delete/post/{id}"
     }
   }
 }

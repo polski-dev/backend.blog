@@ -4,7 +4,7 @@
   "info": {
     "singularName": "grade",
     "pluralName": "grades",
-    "displayName": "grade",
+    "displayName": "Grade",
     "description": ""
   },
   "options": {
@@ -14,11 +14,7 @@
   "attributes": {
     "voice": {
       "type": "enumeration",
-      "enum": [
-        "best",
-        "wow",
-        "wrr"
-      ],
+      "enum": ["best", "wow", "wrr"],
       "required": true,
       "default": "best"
     },
@@ -31,13 +27,7 @@
     "article": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::articles.articles",
-      "inversedBy": "grades"
-    },
-    "video": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::video.video",
+      "target": "api::posts.posts",
       "inversedBy": "grades"
     }
   }

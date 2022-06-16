@@ -71,22 +71,10 @@
       "target": "api::tags.tags",
       "mappedBy": "users"
     },
-    "comments": {
+    "posts": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::comments.comments",
-      "mappedBy": "author"
-    },
-    "articles": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::articles.articles",
-      "mappedBy": "author"
-    },
-    "videos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::video.video",
+      "target": "api::posts.posts",
       "mappedBy": "author"
     },
     "grades": {

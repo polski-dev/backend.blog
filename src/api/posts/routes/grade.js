@@ -8,7 +8,7 @@ module.exports = {
   routes: [
     {
       method: "POST",
-      path: "/videos/:id/grade",
+      path: "/posts/:id/grade",
       handler: "grade.add",
     },
   ],

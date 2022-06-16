@@ -6,7 +6,7 @@
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
-module.exports = createCoreController("api::articles.articles", ({ strapi }) => ({
+module.exports = createCoreController("api::posts.posts", ({ strapi }) => ({
   async create(ctx) {
     const userId = ctx.state.user.id;
     const file = ctx.request.files.cover;
@@ -89,7 +89,7 @@ module.exports = createCoreController("api::articles.articles", ({ strapi }) => 
         files: file,
       });
 
-      const data = await strapi.db.query("api::articles.articles").create({
+      const data = await strapi.db.query("api::posts.posts").create({
         data: { title, author: userId, waitingroom: true, views: 0, cover: uploadFile[0].id, content, type, tags: allIdTags, youtube: youtube ? youtube : "" },
       });
 

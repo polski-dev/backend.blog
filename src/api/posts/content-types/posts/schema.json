@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "article",
+  "collectionName": "post",
   "info": {
-    "singularName": "articles",
-    "pluralName": "article",
-    "displayName": "articles",
+    "singularName": "posts",
+    "pluralName": "post",
+    "displayName": "Posts",
     "description": ""
   },
   "options": {
@@ -21,24 +21,13 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::tags.tags",
-      "inversedBy": "articles"
-    },
-    "comments": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::comments.comments",
-      "mappedBy": "article"
+      "inversedBy": "posts"
     },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "articles"
-    },
-    "waitingroom": {
-      "type": "boolean",
-      "default": false,
-      "required": true
+      "inversedBy": "posts"
     },
     "views": {
       "type": "integer",
@@ -57,7 +46,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::grade.grade",
-      "mappedBy": "article"
+      "mappedBy": "post"
     },
     "content": {
       "type": "richtext",

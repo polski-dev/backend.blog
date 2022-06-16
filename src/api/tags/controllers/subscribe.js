@@ -35,7 +35,7 @@ module.exports = {
       },
     });
 
-    const addVideo = await strapi.db.query("api::articles.articles").count({
+    const addVideo = await strapi.db.query("api::posts.posts").count({
       where: {
         id: tagId,
         video: {},

@@ -8,7 +8,7 @@ module.exports = {
   routes: [
     {
       method: "GET",
-      path: "/videos/:id/comment/:page",
+      path: "/posts/:id/comment/:page",
       handler: "comment.find",
       config: {
         auth: false,
@@ -16,7 +16,7 @@ module.exports = {
     },
     {
       method: "POST",
-      path: "/videos/:id/comment",
+      path: "/posts/:id/comment",
       handler: "comment.add",
     },
   ],

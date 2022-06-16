@@ -87,11 +87,15 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "views": {
       "type": "integer",
-      "required": false
+      "required": true,
+      "default": 0,
+      "unique": false
     },
     "followusers": {
       "type": "relation",

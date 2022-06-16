@@ -14,7 +14,11 @@
   "attributes": {
     "voice": {
       "type": "enumeration",
-      "enum": ["best", "wow", "wrr"],
+      "enum": [
+        "best",
+        "wow",
+        "wrr"
+      ],
       "required": true,
       "default": "best"
     },

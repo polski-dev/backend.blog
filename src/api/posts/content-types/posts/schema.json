@@ -38,7 +38,9 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "ratings": {
       "type": "relation",
@@ -53,7 +55,11 @@
     },
     "type": {
       "type": "enumeration",
-      "enum": ["article", "video", "podcast"],
+      "enum": [
+        "article",
+        "video",
+        "podcast"
+      ],
       "required": true
     },
     "youtube": {
@@ -65,7 +71,9 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["audios"]
+      "allowedTypes": [
+        "audios"
+      ]
     }
   }
 }

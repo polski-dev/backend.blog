@@ -40,4 +40,22 @@ module.exports = ({ env }) => ({
       },
     },
   },
+
+  comments: {
+    enabled: true,
+    config: {
+      badWords: false,
+      moderatorRoles: ["Authenticated"],
+      approvalFlow: ["api::posts.posts"],
+      entryLabel: {
+        "api::posts.posts": ["title"],
+      },
+      reportReasons: {
+        // ..
+      },
+      gql: {
+        // ...
+      },
+    },
+  },
 });

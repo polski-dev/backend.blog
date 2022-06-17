@@ -48,13 +48,13 @@ module.exports = ({ env }) => ({
       moderatorRoles: ["Authenticated"],
       approvalFlow: ["api::posts.posts"],
       entryLabel: {
-        "api::posts.posts": ["title"],
+        "*": ["Title", "title", "Name", "name", "Subject", "subject"],
       },
       reportReasons: {
         // ..
       },
       gql: {
-        // ...
+        auth: true,
       },
     },
   },

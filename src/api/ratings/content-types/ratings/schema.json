@@ -28,7 +28,7 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "ratings"
     },
-    "article": {
+    "post": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::posts.posts",

@@ -32,7 +32,7 @@
     "views": {
       "type": "integer",
       "required": true,
-      "default": 1
+      "default": 0
     },
     "cover": {
       "type": "media",
@@ -42,18 +42,12 @@
         "images"
       ]
     },
-    "ratings": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::ratings.ratings",
-      "mappedBy": "post"
-    },
     "content": {
       "type": "richtext",
       "required": true,
       "default": "Opis.."
     },
-    "type": {
+    "typ": {
       "type": "enumeration",
       "enum": [
         "article",
@@ -74,6 +68,12 @@
       "allowedTypes": [
         "audios"
       ]
+    },
+    "ratings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ratings.ratings",
+      "mappedBy": "post"
     }
   }
 }

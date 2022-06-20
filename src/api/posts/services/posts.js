@@ -11,7 +11,11 @@ module.exports = createCoreService("api::posts.posts", ({ strapi }) => ({
     let data = {};
 
     if (!!id) {
-      data.ratings = await strapi.db.query("api::ratings.ratings").count({ where: { post: { id } } });
+      data.ratings = {};
+      data.ratings.best = await strapi.db.query("api::ratings.ratings").count({ where: { voice: "best", post: { id } } });
+      data.ratings.wow = await strapi.db.query("api::ratings.ratings").count({ where: { voice: "wow", post: { id } } });
+      data.ratings.wrr = await strapi.db.query("api::ratings.ratings").count({ where: { voice: "wrr", post: { id } } });
+      data.ratings.count = data.ratings.best + data.ratings.wow + data.ratings.wrr;
       data.views = (await strapi.db.query("api::posts.posts").findOne({ select: ["views"], where: { id } })).views;
       data.comments = await strapi.db.query("plugin::comments.comment").count({ where: { related: `api::posts.posts:${id}` } });
     } else {

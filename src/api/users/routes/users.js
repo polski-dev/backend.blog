@@ -25,7 +25,7 @@ module.exports = {
     {
       method: "GET",
       path: "/users/subscribe/:id",
-      handler: "users.AmIsubscribe",
+      handler: "users.amISubscribe",
     },
     {
       method: "PUT",

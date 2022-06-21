@@ -25,4 +25,48 @@ module.exports = ({ strapi }) => ({
 
     return { data: { views: userUpdated?.views, id: userUpdated?.id } };
   },
+
+  async amISubscribe(ctx) {
+    const { id } = ctx.params;
+    const userIdAuth = ctx.state.user.id;
+
+    const trustUserId = parseInt(id);
+
+    if (!trustUserId || !userIdAuth) {
+      ctx.status = 400;
+      return (ctx.body = {
+        data: null,
+        error: {
+          status: 400,
+          name: "Wrong field id  ",
+          message: "You must add id in url",
+          details: {},
+        },
+      });
+    }
+
+    return { ok: "ok" };
+  },
+
+  async changeSubscribe(ctx) {
+    const { id } = ctx.params;
+    const userIdAuth = ctx.state.user.id;
+
+    const trustUserId = parseInt(id);
+
+    if (!trustUserId || !userIdAuth) {
+      ctx.status = 400;
+      return (ctx.body = {
+        data: null,
+        error: {
+          status: 400,
+          name: "Wrong field id  ",
+          message: "You must add id in url",
+          details: {},
+        },
+      });
+    }
+
+    return { ok: "ok" };
+  },
 });

@@ -22,5 +22,15 @@ module.exports = {
         auth: false,
       },
     },
+    {
+      method: "GET",
+      path: "/users/subscribe/:id",
+      handler: "users.AmIsubscribe",
+    },
+    {
+      method: "PUT",
+      path: "/users/subscribe/:id",
+      handler: "users.changeSubscribe",
+    },
   ],
 };

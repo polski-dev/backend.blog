@@ -23,6 +23,6 @@ module.exports = ({ strapi }) => ({
     const user = await strapi.db.query("plugin::users-permissions.user").findOne({ where: { id } });
     const userUpdated = await strapi.db.query("plugin::users-permissions.user").update({ where: { id }, data: { views: ++user.views } });
 
-    return { data: { views: userUpdated.views, id: userUpdated.id } };
+    return { data: { views: userUpdated?.views, id: userUpdated?.id } };
   },
 });

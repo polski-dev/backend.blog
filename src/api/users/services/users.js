@@ -26,47 +26,39 @@ module.exports = ({ strapi }) => ({
     return { data: { views: userUpdated?.views, id: userUpdated?.id } };
   },
 
-  async amISubscribe(ctx) {
-    const { id } = ctx.params;
-    const userIdAuth = ctx.state.user.id;
-
-    const trustUserId = parseInt(id);
-
-    if (!trustUserId || !userIdAuth) {
-      ctx.status = 400;
-      return (ctx.body = {
-        data: null,
-        error: {
-          status: 400,
-          name: "Wrong field id  ",
-          message: "You must add id in url",
-          details: {},
-        },
-      });
-    }
-
-    return { ok: "ok" };
+  async amISubscribe(trustUserId, userIdAuth) {
+    const status = await strapi.db.query("plugin::users-permissions.user").findMany({ where: { id: userIdAuth, followusers: { id: trustUserId } } });
+    return { data: { subscribe: !!status.length } };
   },
 
-  async changeSubscribe(ctx) {
-    const { id } = ctx.params;
-    const userIdAuth = ctx.state.user.id;
+  async changeSubscribe(trustUserId, userIdAuth) {
+    const status = !!(await strapi.db.query("plugin::users-permissions.user").findMany({ where: { id: userIdAuth, followusers: { id: trustUserId } } })).length;
 
-    const trustUserId = parseInt(id);
+    const subscriptions = await strapi.db.query("plugin::users-permissions.user").findOne({
+      where: {
+        id: userIdAuth,
+      },
+      select: ["id"],
+      populate: { followusers: { select: ["id"] } },
+    });
 
-    if (!trustUserId || !userIdAuth) {
-      ctx.status = 400;
-      return (ctx.body = {
-        data: null,
-        error: {
-          status: 400,
-          name: "Wrong field id  ",
-          message: "You must add id in url",
-          details: {},
-        },
-      });
-    }
+    let newlistSubscribtion = [];
 
-    return { ok: "ok" };
+    if (status) newlistSubscribtion = subscriptions.followusers.filter((sub) => sub.id != trustUserId);
+    else newlistSubscribtion = [...subscriptions.followusers, trustUserId];
+
+    const res = await strapi.db.query("plugin::users-permissions.user").update({
+      where: {
+        id: userIdAuth,
+      },
+      select: ["id", "username"],
+      populate: { followusers: { select: ["id"] } },
+
+      data: {
+        followusers: newlistSubscribtion,
+      },
+    });
+
+    return { data: res };
   },
 });

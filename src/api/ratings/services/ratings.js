@@ -15,7 +15,10 @@ module.exports = createCoreService("api::ratings.ratings", ({ strapi }) => ({
   },
   async deleteRaitingUser(postId, userId) {
     const raiting = await strapi.db.query("api::ratings.ratings").findMany({ where: { post: postId, author: userId } });
-    if (raiting?.length) return await strapi.db.query("api::ratings.ratings").delete({ where: { post: postId, author: userId } });
+    if (raiting?.length) {
+      const del = await strapi.db.query("api::ratings.ratings").delete({ where: { post: postId, author: userId } });
+      return { data: [del] };
+    }
     return { data: raiting };
   },
 }));

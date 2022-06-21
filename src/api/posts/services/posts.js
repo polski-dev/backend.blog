@@ -32,4 +32,23 @@ module.exports = createCoreService("api::posts.posts", ({ strapi }) => ({
 
     return { data };
   },
+
+  async addViews(id) {
+    if (!id) {
+      ctx.status = 400;
+      return (ctx.body = {
+        data: null,
+        error: {
+          status: 400,
+          name: "Wrong field id",
+          message: "You must add id in url",
+          details: {},
+        },
+      });
+    }
+    const post = await strapi.db.query("api::posts.posts").findOne({ where: { id } });
+    const views = await strapi.db.query("api::posts.posts").update({ where: { id }, data: { views: ++post.views } });
+
+    return { data: views };
+  },
 }));

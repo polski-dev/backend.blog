@@ -21,8 +21,8 @@ module.exports = ({ strapi }) => ({
 
   async addViews(id) {
     const user = await strapi.db.query("plugin::users-permissions.user").findOne({ where: { id } });
-    const views = await strapi.db.query("plugin::users-permissions.user").update({ where: { id }, data: { views: ++user.views } });
+    const userUpdated = await strapi.db.query("plugin::users-permissions.user").update({ where: { id }, data: { views: ++user.views } });
 
-    return { data: views };
+    return { data: { views: userUpdated.views, id: userUpdated.id } };
   },
 });

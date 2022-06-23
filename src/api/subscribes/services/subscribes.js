@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * users service.
+ * subscribes service.
  */
 
 module.exports = ({ strapi }) => ({

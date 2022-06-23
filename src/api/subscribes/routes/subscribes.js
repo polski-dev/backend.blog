@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * users router.
+ * subscribes router.
  */
 
 module.exports = {
@@ -15,6 +15,16 @@ module.exports = {
       method: "PUT",
       path: "/subscribes/users/:id",
       handler: "subscribes.changeUserSubscriptionStatus",
+    },
+    {
+      method: "GET",
+      path: "/subscribes/tags/:id",
+      handler: "subscribes.amISubscribeTag",
+    },
+    {
+      method: "PUT",
+      path: "/subscribes/tags/:id",
+      handler: "subscribes.changeTagSubscriptionStatus",
     },
   ],
 };

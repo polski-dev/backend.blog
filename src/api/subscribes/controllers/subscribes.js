@@ -5,12 +5,12 @@
  */
 
 module.exports = {
-  async count(ctx) {
+  async amISubscribeUser(ctx) {
     const { id } = ctx.params;
-
+    const userIdAuth = ctx.state.user.id;
     const trustUserId = parseInt(id);
 
-    if (!trustUserId) {
+    if (!trustUserId || !userIdAuth) {
       ctx.status = 400;
       return (ctx.body = {
         data: null,
@@ -23,15 +23,15 @@ module.exports = {
       });
     }
 
-    return (ctx.body = await strapi.service("api::users.users").count(trustUserId));
+    return (ctx.body = await strapi.service("api::users.users").amISubscribeUser(trustUserId, userIdAuth));
   },
 
-  async addViews(ctx) {
+  async changeUserSubscriptionStatus(ctx) {
     const { id } = ctx.params;
-
+    const userIdAuth = ctx.state.user.id;
     const trustUserId = parseInt(id);
 
-    if (!trustUserId) {
+    if (!trustUserId || !userIdAuth) {
       ctx.status = 400;
       return (ctx.body = {
         data: null,
@@ -44,6 +44,6 @@ module.exports = {
       });
     }
 
-    return (ctx.body = await strapi.service("api::users.users").addViews(trustUserId));
+    return (ctx.body = await strapi.service("api::users.users").changeUserSubscriptionStatus(trustUserId, userIdAuth));
   },
 };

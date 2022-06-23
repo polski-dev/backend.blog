@@ -40,4 +40,40 @@ module.exports = ({ strapi }) => ({
 
     return { data: res };
   },
+
+  async amISubscribeTag(trustTagId, userIdAuth) {
+    const status = await strapi.db.query("api::tags.tags").findMany({ where: { id: trustTagId, users: { id: userIdAuth } } });
+    return { data: { subscribe: !!status.length } };
+  },
+
+  async changeTagSubscriptionStatus(trustTagId, userIdAuth) {
+    const status = !!(await strapi.db.query("api::tags.tags").findMany({ where: { id: trustTagId, users: { id: userIdAuth } } })).length;
+
+    const subscriptions = await strapi.db.query("api::tags.tags").findOne({
+      where: {
+        id: trustTagId,
+      },
+      select: ["id"],
+      populate: { users: { select: ["id"] } },
+    });
+
+    let newlistSubscribtion = [];
+
+    if (status) newlistSubscribtion = subscriptions.users.filter((sub) => sub.id != userIdAuth);
+    else newlistSubscribtion = [...subscriptions.users, userIdAuth];
+
+    const res = await strapi.db.query("api::tags.tags").update({
+      where: {
+        id: trustTagId,
+      },
+      select: ["id", "title"],
+      populate: { users: { select: ["id"] } },
+
+      data: {
+        users: newlistSubscribtion,
+      },
+    });
+
+    return { data: res };
+  },
 });

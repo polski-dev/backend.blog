@@ -50,9 +50,9 @@ module.exports = {
   async amISubscribeTag(ctx) {
     const { id } = ctx.params;
     const userIdAuth = ctx.state.user.id;
-    const trustUserId = parseInt(id);
+    const trustTagId = parseInt(id);
 
-    if (!trustUserId || !userIdAuth) {
+    if (!trustTagId || !userIdAuth) {
       ctx.status = 400;
       return (ctx.body = {
         data: null,
@@ -65,15 +65,15 @@ module.exports = {
       });
     }
 
-    return (ctx.body = await strapi.service("api::subscribes.subscribes").amISubscribeUser(trustUserId, userIdAuth));
+    return (ctx.body = await strapi.service("api::subscribes.subscribes").amISubscribeTag(trustTagId, userIdAuth));
   },
 
   async changeTagSubscriptionStatus(ctx) {
     const { id } = ctx.params;
     const userIdAuth = ctx.state.user.id;
-    const trustUserId = parseInt(id);
+    const trustTagId = parseInt(id);
 
-    if (!trustUserId || !userIdAuth) {
+    if (!trustTagId || !userIdAuth) {
       ctx.status = 400;
       return (ctx.body = {
         data: null,
@@ -86,6 +86,6 @@ module.exports = {
       });
     }
 
-    return (ctx.body = await strapi.service("api::subscribes.subscribes").changeUserSubscriptionStatus(trustUserId, userIdAuth));
+    return (ctx.body = await strapi.service("api::subscribes.subscribes").changeTagSubscriptionStatus(trustTagId, userIdAuth));
   },
 };

@@ -12,8 +12,15 @@ module.exports = createCoreService("api::tags.tags", ({ strapi }) => ({
     if (!!id) {
       data.views = (await strapi.db.query("api::tags.tags").findOne({ select: ["views"], where: { id } })).views;
       data.followTags = await strapi.db.query("plugin::users-permissions.user").count({ where: { followtags: { id } } });
-      data.publishedPost = await strapi.db.query("api::posts.posts").count({ where: { id, publishedAt: { $null: false } } });
-      data.unPublishedPost = await strapi.db.query("api::posts.posts").count({ where: { id, publishedAt: { $null: true } } });
+
+      data.publishedArticle = await strapi.db.query("api::tags.tags").count({ where: { id, posts: { typ: "article" }, publishedAt: { $null: false } } });
+      data.unPublishedArticle = await strapi.db.query("api::tags.tags").count({ where: { id, posts: { typ: "article" }, publishedAt: { $null: true } } });
+
+      data.publishedVideo = await strapi.db.query("api::tags.tags").count({ where: { id, posts: { typ: "video" }, publishedAt: { $null: false } } });
+      data.unPublishedVideo = await strapi.db.query("api::tags.tags").count({ where: { id, posts: { typ: "video" }, publishedAt: { $null: true } } });
+
+      data.publishedPost = data.publishedArticle + data.publishedVideo;
+      data.unPublishedPost = data.unPublishedArticle + data.unPublishedVideo;
     } else data.tagsCount = await strapi.db.query("api::tags.tags").count({});
 
     return { data };

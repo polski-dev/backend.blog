@@ -14,5 +14,13 @@ module.exports = {
         auth: false,
       },
     },
+    {
+      method: "GET",
+      path: "/searchs/:query/:page",
+      handler: "searchs.find",
+      config: {
+        auth: false,
+      },
+    },
   ],
 };

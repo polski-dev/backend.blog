@@ -6,7 +6,7 @@
 
 module.exports = {
   async find(ctx) {
-    const { query } = ctx.params;
+    const { query, page } = ctx.params;
 
     if (!query) {
       ctx.status = 400;
@@ -14,13 +14,14 @@ module.exports = {
         data: null,
         error: {
           status: 400,
-          name: "Wrong field id  ",
-          message: "You must add id in url",
+          name: "Wrong field query",
+          message: "You must add query in url",
           details: {},
         },
       });
-    }
-
-    return (ctx.body = await strapi.service("api::searchs.searchs").find(query));
+    } else if (!!page) {
+      let turstPage = typeof page === "string" ? parseInt(page) : 0;
+      return (ctx.body = await strapi.service("api::searchs.searchs").find(query, turstPage));
+    } else return (ctx.body = await strapi.service("api::searchs.searchs").find(query));
   },
 };

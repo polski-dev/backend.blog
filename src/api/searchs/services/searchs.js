@@ -38,9 +38,9 @@ module.exports = ({ strapi }) => ({
     data.posts.meta.pagination.pageCount = Math.ceil(data.posts.meta.pagination.total / data.posts.meta.pagination.pageSize);
     data.users.meta.pagination.pageCount = Math.ceil(data.users.meta.pagination.total / data.users.meta.pagination.pageSize);
 
-    data.tags.data = await strapi.db.query("api::tags.tags").findMany({ where: { title: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.tags.meta.pagination.page - 1) * 10, limit: 10 });
-    data.posts.data = await strapi.db.query("api::posts.posts").findMany({ where: { title: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.tags.meta.pagination.page - 1) * 10, limit: 10 });
-    data.users.data = await strapi.db.query("plugin::users-permissions.user").findMany({ where: { username: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.tags.meta.pagination.page - 1) * 10, limit: 10 });
+    data.tags.data = await strapi.entityService.findMany("api::tags.tags", { filters: { title: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.posts.meta.pagination.page - 1) * 10, limit: 10 });
+    data.posts.data = await strapi.entityService.findMany("api::posts.posts", { filters: { title: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.posts.meta.pagination.page - 1) * 10, limit: 10 });
+    data.users.data = await strapi.entityService.findMany("plugin::users-permissions.user", { filters: { username: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.posts.meta.pagination.page - 1) * 10, limit: 10 });
 
     return data;
   },

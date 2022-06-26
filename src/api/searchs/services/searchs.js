@@ -42,6 +42,6 @@ module.exports = ({ strapi }) => ({
     data.posts.data = await strapi.entityService.findMany("api::posts.posts", { filters: { title: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.posts.meta.pagination.page - 1) * 10, limit: 10 });
     data.users.data = await strapi.entityService.findMany("plugin::users-permissions.user", { filters: { username: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.posts.meta.pagination.page - 1) * 10, limit: 10 });
 
-    return data;
+    return { data };
   },
 });

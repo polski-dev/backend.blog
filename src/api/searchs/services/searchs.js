@@ -38,9 +38,66 @@ module.exports = ({ strapi }) => ({
     data.posts.meta.pagination.pageCount = Math.ceil(data.posts.meta.pagination.total / data.posts.meta.pagination.pageSize);
     data.users.meta.pagination.pageCount = Math.ceil(data.users.meta.pagination.total / data.users.meta.pagination.pageSize);
 
-    data.tags.data = await strapi.entityService.findMany("api::tags.tags", { filters: { title: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.posts.meta.pagination.page - 1) * 10, limit: 10 });
-    data.posts.data = await strapi.entityService.findMany("api::posts.posts", { filters: { title: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.posts.meta.pagination.page - 1) * 10, limit: 10 });
-    data.users.data = await strapi.entityService.findMany("plugin::users-permissions.user", { filters: { username: { $containsi: query } }, sort: { createdAt: "desc" }, start: (data.posts.meta.pagination.page - 1) * 10, limit: 10 });
+    const tags = await strapi.entityService.findMany("api::tags.tags", {
+      filters: { title: { $containsi: query } },
+      populate: ["cover"],
+      sort: { views: "desc" },
+      start: (data.posts.meta.pagination.page - 1) * 10,
+      limit: 10,
+    });
+
+    const posts = await strapi.entityService.findMany("api::posts.posts", {
+      filters: { title: { $containsi: query } },
+      populate: ["cover", "tags"],
+      sort: { createdAt: "desc" },
+      start: (data.posts.meta.pagination.page - 1) * 10,
+      limit: 10,
+    });
+
+    const users = await strapi.entityService.findMany("plugin::users-permissions.user", {
+      filters: { username: { $containsi: query } },
+      populate: ["avatar", "skilks"],
+      sort: { views: "desc" },
+      start: (data.posts.meta.pagination.page - 1) * 10,
+      limit: 10,
+    });
+
+    data.posts.data = posts.map((post) => {
+      return {
+        id: post?.id,
+        attributes: {
+          ...post,
+          cover: { data: { id: post?.cover?.id, attributes: { ...post?.cover } } },
+          tags: {
+            data: post?.tags?.length
+              ? post?.tags?.map((tag) => {
+                  return { id: tag?.id, attributes: { ...tag } };
+                })
+              : [],
+          },
+        },
+      };
+    });
+
+    data.tags.data = tags.map((tag) => {
+      return {
+        id: tag?.id,
+        attributes: {
+          ...tag,
+          cover: { data: { id: tag?.cover?.id, attributes: { ...tag?.cover } } },
+        },
+      };
+    });
+
+    data.users.data = users.map((user) => {
+      return {
+        id: user.id,
+        attributes: {
+          ...user,
+          avatar: { data: { id: user?.avatar?.id, attributes: { ...user?.avatar } } },
+        },
+      };
+    });
 
     return { data };
   },

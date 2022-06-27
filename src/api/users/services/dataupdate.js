@@ -53,8 +53,14 @@ module.exports = {
     return { data: update };
   },
 
-  async dataEmailUpdate() {
-    return { ok: "dataEmailUpdate" };
+  async dataEmailUpdate(ctx) {
+    const data = await strapi.db.query("plugin::users-permissions.user").update({
+      where: { id: ctx.state.user.id },
+      data: { email: ctx.request.body.email },
+      select: ["id", "username", "email"],
+    });
+
+    return { data };
   },
 
   async dataPasswordUpdate() {

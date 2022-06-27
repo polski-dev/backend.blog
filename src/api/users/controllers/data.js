@@ -34,7 +34,39 @@ module.exports = {
   },
 
   async dataEmailUpdate(ctx) {
-    return (ctx.body = await strapi.service("api::users.dataupdate").dataEmailUpdate());
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!emailRegex.test(ctx.request.body.email)) {
+      ctx.status = 400;
+      return (ctx.body = {
+        data: null,
+        error: {
+          status: 400,
+          name: "Wrong field email",
+          message: "You must add good email",
+          details: {},
+        },
+      });
+    }
+
+    const isEmailUnique = await strapi.db.query("plugin::users-permissions.user").findOne({
+      where: { email: ctx.request.body.email },
+    });
+
+    if (!!isEmailUnique) {
+      ctx.status = 400;
+      return (ctx.body = {
+        data: null,
+        error: {
+          status: 400,
+          name: "Email is uses",
+          message: "Failed update field becouse email is uses",
+          details: {},
+        },
+      });
+    }
+
+    return (ctx.body = await strapi.service("api::users.dataupdate").dataEmailUpdate(ctx));
   },
 
   async dataPasswordUpdate(ctx) {

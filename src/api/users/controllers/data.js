@@ -22,7 +22,7 @@ module.exports = {
   },
 
   async dataPublicRead(ctx) {
-    return (ctx.body = await strapi.service("api::users.dataget").dataPublicRead());
+    return (ctx.body = await strapi.service("api::users.dataget").dataPublicRead(ctx));
   },
 
   async dataPublicUpdate(ctx) {

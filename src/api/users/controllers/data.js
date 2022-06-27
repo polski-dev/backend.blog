@@ -70,7 +70,22 @@ module.exports = {
   },
 
   async dataPasswordUpdate(ctx) {
-    return (ctx.body = await strapi.service("api::users.dataupdate").dataPasswordUpdate());
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/g;
+
+    if (!passwordRegex.test(ctx.request.body.password)) {
+      ctx.status = 400;
+      return (ctx.body = {
+        data: null,
+        error: {
+          status: 400,
+          name: "Wrong field password",
+          message: "You must add a password with at least 1 capital letter, one digit and one special character, the password must be at least 8 characters long",
+          details: {},
+        },
+      });
+    }
+
+    return (ctx.body = await strapi.service("api::users.dataupdate").dataPasswordUpdate(ctx));
   },
 
   async dataUserDelete(ctx) {

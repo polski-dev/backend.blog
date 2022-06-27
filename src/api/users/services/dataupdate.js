@@ -1,4 +1,5 @@
 "use strict";
+const bcrypt = require("bcryptjs");
 
 /**
  *  user data service
@@ -63,8 +64,16 @@ module.exports = {
     return { data };
   },
 
-  async dataPasswordUpdate() {
-    return { ok: "dataPasswordUpdate" };
+  async dataPasswordUpdate(ctx) {
+    const password = bcrypt.hashSync(ctx.request.body.password, 10);
+
+    const data = await strapi.db.query("plugin::users-permissions.user").update({
+      where: { id: ctx.state.user.id },
+      data: { password },
+      select: ["id", "username", "password"],
+    });
+
+    return { data };
   },
 
   async dataUserDelete() {

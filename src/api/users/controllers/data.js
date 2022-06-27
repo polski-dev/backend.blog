@@ -30,7 +30,7 @@ module.exports = {
   },
 
   async dataEmailRead(ctx) {
-    return (ctx.body = await strapi.service("api::users.dataget").dataEmailRead());
+    return (ctx.body = await strapi.service("api::users.dataget").dataEmailRead(ctx));
   },
 
   async dataEmailUpdate(ctx) {

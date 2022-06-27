@@ -19,7 +19,12 @@ module.exports = {
     return { data };
   },
 
-  async dataEmailRead() {
-    return { ok: "dataPublicRead" };
+  async dataEmailRead(ctx) {
+    const data = await strapi.db.query("plugin::users-permissions.user").findOne({
+      where: { id: ctx.state.user.id },
+      select: ["id", "username", "email"],
+    });
+
+    return { data };
   },
 };

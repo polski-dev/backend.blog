@@ -26,7 +26,7 @@ module.exports = {
   },
 
   async dataPublicUpdate(ctx) {
-    return (ctx.body = await strapi.service("api::users.dataupdate").dataPublicUpdate());
+    return (ctx.body = await strapi.service("api::users.dataupdate").dataPublicUpdate(ctx));
   },
 
   async dataEmailRead(ctx) {

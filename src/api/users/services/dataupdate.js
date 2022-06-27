@@ -28,8 +28,29 @@ module.exports = {
     return data;
   },
 
-  async dataPublicUpdate() {
-    return { ok: "dataPublicUpdate" };
+  async dataPublicUpdate(ctx) {
+    const userIdAuth = ctx.state.user.id;
+    const { username, about, website, youtube, instagram, tiktok, github, city, country } = ctx.request.body;
+
+    let data = {};
+
+    if (!!username) data.username = username;
+    if (!!about) data.about = about;
+    if (!!website) data.website = website;
+    if (!!youtube) data.youtube = youtube;
+    if (!!instagram) data.instagram = instagram;
+    if (!!tiktok) data.tiktok = tiktok;
+    if (!!github) data.github = github;
+    if (!!city) data.city = city;
+    if (!!country) data.country = country;
+
+    const update = await strapi.db.query("plugin::users-permissions.user").update({
+      data,
+      where: { id: userIdAuth },
+      select: ["id", "username", "blocked", "views", "createdAt", "updatedAt", "about", "website", "youtube", "instagram", "tiktok", "github", "city", "country"],
+    });
+
+    return { data: update };
   },
 
   async dataEmailUpdate() {

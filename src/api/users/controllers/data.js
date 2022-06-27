@@ -89,6 +89,6 @@ module.exports = {
   },
 
   async dataUserDelete(ctx) {
-    return (ctx.body = await strapi.service("api::users.dataupdate").dataUserDelete());
+    return (ctx.body = await strapi.service("api::users.dataupdate").dataUserDelete(ctx));
   },
 };

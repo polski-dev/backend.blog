@@ -76,7 +76,12 @@ module.exports = {
     return { data };
   },
 
-  async dataUserDelete() {
-    return { ok: "dataUserDelete" };
+  async dataUserDelete(ctx) {
+    const data = await strapi.db.query("plugin::users-permissions.user").delete({
+      where: { id: ctx.state.user.id },
+      select: ["id", "username"],
+    });
+
+    return { data };
   },
 };
